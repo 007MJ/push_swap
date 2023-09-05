@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 14:50:30 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/08/30 01:37:57 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/09/05 19:12:46 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,15 @@ int			is_alpha(char *str);
 
 int	long	ft_atoi(char *str);
 void		ft_putstr(char *str);
+
+typedef struct s_stack
+{
+	int				nb;
+	struct	s_stack	*next;
+}	t_stack;
+
+t_stack	*new_stack(int number);
+void	add_last(t_stack	**lst, t_stack	*new);
 
 # endif
 

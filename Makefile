@@ -6,7 +6,7 @@
 #    By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/15 18:06:53 by mnshimiy          #+#    #+#              #
-#    Updated: 2023/08/30 01:37:48 by mnshimiy         ###   ########.fr        #
+#    Updated: 2023/09/05 19:13:02 by mnshimiy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ CGLAGS = -Wall -Werror -Wextra -g -fsanitize=address
 RM     = rm -fr
 
 
-SRCS    = src/main.c  src/parsing/is_alpha.c src/parsing/is_number.c src/parsing/nb_ok.c src/parsing/not_number.c src/ft_atoi.c src/ft_putstr.c
+SRCS    = src/main.c  src/parsing/is_alpha.c src/parsing/is_number.c src/parsing/nb_ok.c src/parsing/not_number.c src/ft_atoi.c src/ft_putstr.c\
+		src/list/new_stack.c src/list/add_last.c
 
 
 OBJS = $(SRCS:.c=.o)

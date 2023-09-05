@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   new_stack.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 17:53:17 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/05 18:30:55 by mnshimiy         ###   ########.fr       */
+/*   Created: 2023/09/05 18:14:06 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/09/05 18:30:25 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
-int	main (int argc, char *argv[])
+t_stack	*new_stack(int nb)
 {
-	if (argc == 2)
-	{
-		if (not_numbe(argv[1]) == -1)
-			return (-1);
-		// ft_atoi(argv[1]);
-		
-	}
-	else if (argc > 2)
-	{
+	t_stack	*new;
 
-	}
-	else
-		ft_putstr("Need 2 or more argc !\n");
+	new = malloc (sizeof(t_stack));
+	new->nb = nb;
+	new->next = NULL;
+	return (new);
 }

@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   add_last.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 17:53:17 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/05 18:30:55 by mnshimiy         ###   ########.fr       */
+/*   Created: 2023/09/05 18:35:47 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/09/05 19:27:04 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
-int	main (int argc, char *argv[])
+void	add_last(t_stack	**lst, t_stack	*new)
 {
-	if (argc == 2)
-	{
-		if (not_numbe(argv[1]) == -1)
-			return (-1);
-		// ft_atoi(argv[1]);
-		
-	}
-	else if (argc > 2)
-	{
+	t_stack	*last;
 
+	last = *lst;
+	if (!lst || !new)
+		return ;
+	if (last->next == NULL)
+	{
+		new->next = *lst;
+		*lst = new;
 	}
 	else
-		ft_putstr("Need 2 or more argc !\n");
+	{
+		while (last->next != NULL)
+		{
+			last = last->next;
+		}
+		last->next = new;
+	}
 }
