@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 01:05:22 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/08/30 02:04:44 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/09/06 18:38:42 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ long int ft_atoi(char *str)
 		i++;
 	}
 	res *=n;
-	if (min_max(res))
+	if (min_max(res) == -1)
 	{
 		return (2147483647);
 	}

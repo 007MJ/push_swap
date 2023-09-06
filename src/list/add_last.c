@@ -6,30 +6,32 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 18:35:47 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/05 19:27:04 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/09/06 19:06:46 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	add_last(t_stack	**lst, t_stack	*new)
+void	add_last(t_stack *lst, int newnb)
 {
-	t_stack	*last;
+	t_stack	*new;
 
-	last = *lst;
-	if (!lst || !new)
+	new = malloc(sizeof(t_stack));
+	if (!new)
 		return ;
-	if (last->next == NULL)
+	new->nb = newnb;
+	new->next = NULL;
+	if (lst == NULL)
 	{
-		new->next = *lst;
-		*lst = new;
+		lst = new;
 	}
 	else
 	{
-		while (last->next != NULL)
-		{
-			last = last->next;
-		}
-		last->next = new;
+		t_stack	*current;
+
+		current = lst;
+		while (current->next != NULL)
+			current = current->next;
+		current->next = new;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:53:17 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/05 20:03:37 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/09/06 18:20:05 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,16 @@
 
 int	main (int argc, char *argv[])
 {
+	t_stack *stack;
+
+	stack = malloc(sizeof(t_stack));
 	if (argc == 2)
 	{
 		if (not_numbe(argv[1]) == -1)
 			return (-1);
-		section(argv[1]);
+		section(argv[1], stack);
+		// stack->nb = 100000;
+		printf("%d\n", stack->nb);
 	}
 	else if (argc > 2)
 	{
