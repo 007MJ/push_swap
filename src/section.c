@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   section.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 17:53:17 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/05 20:03:37 by mnshimiy         ###   ########.fr       */
+/*   Created: 2023/09/05 19:59:36 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/09/05 20:20:54 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	main (int argc, char *argv[])
+void	section(char *str)
 {
-	if (argc == 2)
-	{
-		if (not_numbe(argv[1]) == -1)
-			return (-1);
-		section(argv[1]);
-	}
-	else if (argc > 2)
-	{
+	// split
+	// malloc le nombre de space
+	// mettre en nombre
+	int		i;
+	char	**tab;
 
+	tab = ft_split(str, ' ');
+	i = 0;
+	while (*tab != NULL)
+	{
+		i++;
+		tab++;
 	}
-	else
-		ft_putstr("Need 2 or more argc !\n");
 }
