@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 14:50:30 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/07 00:17:19 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/09/07 17:15:12 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void		add_last(t_stack	*lst, int newnb);
 char		**ft_split(const char *s, char c);
 t_stack		*section(char *str, t_stack *save);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
+void		printlst(t_stack	*stack);
 
 # endif
 
