@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   swap_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 17:53:17 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/07 18:04:46 by mnshimiy         ###   ########.fr       */
+/*   Created: 2023/09/07 17:31:31 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/09/07 18:23:36 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
-int	main (int argc, char *argv[])
+void	swap_a(t_stack *lst)
 {
-	t_stack *stack;
-	stack = malloc(sizeof(t_stack));
-	if (argc == 2)
-	{
-		if (not_numbe(argv[1]) == -1)
-			return (-1);
-		section(argv[1], stack);
-		swap_a(stack);
-		printlst(stack);
-	}
-	else if (argc > 2)
-	{
+	t_stack	*second;
+	int		first;
 
-	}
-	else
-		ft_putstr("Need 2 or more argc !\n");
+	second = lst;
+	second = second->next;
+	first = lst->nb;
+	lst->nb = second->nb;
+	second->nb = first;
 }
