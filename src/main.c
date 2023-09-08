@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:53:17 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/07 18:04:46 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/09/07 22:24:43 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	main (int argc, char *argv[])
 		section(argv[1], stack);
 		swap_a(stack);
 		printlst(stack);
+		printf("size lst -> %d\n", lstsize(stack));
 	}
 	else if (argc > 2)
 	{
