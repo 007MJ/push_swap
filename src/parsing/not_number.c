@@ -6,21 +6,40 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 13:46:01 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/08/30 00:59:45 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/09/19 16:32:36 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
+
+int	check_space(char *str)
+{
+	int	i;
+	int	y;
+
+	i = 0;
+	y = 0;
+	while (str[i] == ' ')
+	{
+		if (str[i] != ' ')
+			y = -1;
+		i++;
+	}
+	if (y != -1)
+		return (-1);
+	return (1);
+}
 
 int	not_numbe(char *str)
 {
 	int	i;
 
 	i = 0;
-	// check le space avanat et
-	while (str[i] <= 9 && str[i] <= 13 || str[i] == 32)
+	if (check_space(str) == -1)
+		return (-1);
+	while (str[i] && str[i] <= 9 && str[i] <= 13 || str[i] == 32)
 		i++;
-	//check si il des alph
+	// check si il des alph
 	if (is_alpha(str) != 1)
 	{
 		printf("error : alpha");

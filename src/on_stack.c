@@ -6,14 +6,14 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 19:59:36 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/07 22:23:33 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/09/19 15:22:48 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 
-t_stack		*section(char *str, t_stack *save)
+t_stack		*on_stack(char *str, t_stack *save)
 {
 	// split
 	// malloc le nombre de space
