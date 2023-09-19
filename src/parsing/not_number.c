@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 13:46:01 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/19 16:32:36 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/09/19 16:56:24 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	check_space(char *str)
 			y = -1;
 		i++;
 	}
-	if (y != -1)
+	if (y == -1)
 		return (-1);
 	return (1);
 }
@@ -35,8 +35,8 @@ int	not_numbe(char *str)
 	int	i;
 
 	i = 0;
-	if (check_space(str) == -1)
-		return (-1);
+	// if (check_space(str) == -1)
+	// 	return (-1);
 	while (str[i] && str[i] <= 9 && str[i] <= 13 || str[i] == 32)
 		i++;
 	// check si il des alph
