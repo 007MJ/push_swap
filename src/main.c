@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:53:17 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/19 19:52:45 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/09/19 23:29:58 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ int	main (int argc, char *argv[])
 		stack = argc_bigger_two(argv, argc);
 		// swap_a(stack);
 		// swap_list(stack, 3, 6);
-		info->position = 1;
-		info->position_one = 2;
-		info->str = "sa\n";
-		swap_a_b(stack, info);
+		// info->position = 1;
+		// info->position_one = 2;
+		// info->str = "sa\n";
+		
 		printlst(stack);
 		printf("size lst -> %d\n", lstsize(stack));
 	}

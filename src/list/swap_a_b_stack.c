@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struc_infos.c                                      :+:      :+:    :+:   */
+/*   swap_a_b_stack.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 18:55:15 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/19 23:28:47 by mnshimiy         ###   ########.fr       */
+/*   Created: 2023/09/19 23:32:13 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/09/19 23:49:11 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	struc_infos(t_infos *info, int position, int position_one, char *str)
+void	swap_a_b_stack(t_stack *stack_a, t_stack *stack_b, t_infos *info)
 {
-	info->position = position;
-	info->position_one = position_one;
-	info->str = str;
+	if (!stack_a || !stack_b)
+		return ;
+	
 }

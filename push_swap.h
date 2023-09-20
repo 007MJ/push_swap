@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 14:50:30 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/19 19:49:36 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/09/19 23:49:05 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ typedef struct s_info
 t_stack		*new_stack(void);
 void		add_last(t_stack	*lst, int newnb);
 void		swap_list(t_stack *stack, int position, int position_one);
-t_infos		*struc_infos(t_infos *info, int position, int position_one, char *str);
+void		struc_infos(t_infos *info, int position, int position_one, char *str);
+void		swap_a_b_stack(t_stack *stack_a, t_stack *stack_b, t_infos *info);
 char		**ft_split(const char *s, char c);
 t_stack		*on_stack(char *str, t_stack *save);
 t_stack		*argc_bigger_two(char **argv, int len_argc);
