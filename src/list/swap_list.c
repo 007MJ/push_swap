@@ -6,30 +6,12 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 17:08:13 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/19 18:30:24 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/09/20 17:28:37 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-t_stack	*search_list(t_stack *stack, int position)
-{
-	t_stack	*current;
-	int		i;
-
-	current = stack;
-	i = 1;
-	while (current != NULL)
-	{
-		if (i == position)
-		{
-			return (current);
-		}
-		i++;
-		current = current->next;
-	}
-	return (NULL);
-}
 void	swap_list(t_stack *stack, int position, int position_one)
 {
 	int		tm;
