@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 14:50:30 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/24 19:20:49 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/09/25 18:40:32 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ void		swap_list(t_stack *stack, int position, int position_one);
 void		rr(t_stack **first, t_stack **second);
 void		rotate_a(t_stack **stack, char *str);
 void		reverse_rotate_a(t_stack **stack, char *str);
-void		push_stack(t_stack **first_stack, t_stack **second_stack);
+void		push_a(t_stack **stack_a, t_stack **stack_b);
+void		push_b(t_stack **stack_a, t_stack **stack_b);
 t_stack		*search_list(t_stack *stack, int position);
 void		delete_first(t_stack **stack);
 char		**ft_split(const char *s, char c);
@@ -55,6 +56,9 @@ char		*ft_substr(char const *s, unsigned int start, size_t len);
 void		printlst(t_stack	*stack);
 void		swap_a_b(t_stack *list, char *str);
 int			lstsize(t_stack *lst);
+
+void		sort_three(t_stack **stack);
+void		sort_five(t_stack **stack, t_stack **stack_b);
 # endif
 
 

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_stack.c                                       :+:      :+:    :+:   */
+/*   push_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 17:21:18 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/22 20:04:17 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/09/25 18:53:38 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	push_stack(t_stack **stack_a, t_stack **stack_b)
+void	push_b(t_stack **stack_a, t_stack **stack_b)
 {
 	ft_putstr("pb\n");
 	t_stack *new;
@@ -24,19 +24,15 @@ void	push_stack(t_stack **stack_a, t_stack **stack_b)
 		return ;
 	if (*stack_b == NULL)
 	{
-		printf("if : on est la -> %p\n", stack_b);
 		new->nb = (*stack_a)->nb;
 		new->next = NULL;
 		*stack_b = new;
-		printf("if : on est la -> %p\n", stack_b);
 	}
 	else
 	{
 		new->nb = (*stack_a)->nb;
 		new->next = (*stack_b);
 		*stack_b = new;
-		printf(" else:on est la -> %d\n", (*stack_b)->nb);
 	}
-	delete_first(&stack_a);
-
+	delete_first(stack_a);
 }

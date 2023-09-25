@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 15:24:46 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/24 19:13:08 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/09/25 17:03:17 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,12 @@
 
 void	reverse_rotate_a(t_stack **stack, char *str)
 {
-	t_stack	*current;
-	t_stack	*new;
-	int		i;
-
-	i = 1;
-	ft_putstr("rra\n");
-	new = new_stack();
-	current = search_list(*stack, lstsize(*stack) -1);
-	new = search_list(*stack, lstsize(*stack) -2);
-	new->next = NULL;
-	current->next = *stack;
-	*stack = current;
+	t_stack *last;
+	t_stack *before_last;
+	ft_putstr(str);
+	last = search_list(*stack, lstsize(*stack));
+	before_last = search_list(*stack, lstsize(*stack) -1);
+	before_last->next = NULL;
+	last->next = *stack;
+	*stack = last;
 }

@@ -6,27 +6,32 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:53:17 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/24 19:09:41 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/09/25 19:27:52 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+void	push_swap(t_stack **stack, t_stack **stack_b)
+{
+	if(lstsize(*stack) == 3)
+		sort_three(stack);
+	if (lstsize(*stack) == 5)
+		sort_five(stack, stack_b);
+
+}
+
 int	main (int argc, char *argv[])
 {
 	t_stack	*stack;
 	t_stack	*stack_b;
-	t_infos	*info;
 
 	stack = malloc(sizeof(t_stack));
-	stack_b = NULL;
-	info = malloc(sizeof(t_infos));
-
 	stack = argc_bigger_two(argv, argc);
-
-	// first_be_last(&stack);
-	rotate_a(&stack, "ra");
+	push_swap(&stack, &stack_b);
+	printf("stack A : \n");
 	printlst(stack);
+	printf("|-----------|\n");
+	printf("stack B : \n");
 	printlst(stack_b);
-	// free(stack);
 }

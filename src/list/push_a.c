@@ -6,13 +6,13 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 17:21:18 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/22 20:27:54 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/09/25 18:52:33 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	push_stack(t_stack **stack_a, t_stack **stack_b)
+void	push_a(t_stack **stack_a, t_stack **stack_b)
 {
 	ft_putstr("pa\n");
 	t_stack *new;
@@ -37,7 +37,6 @@ void	push_stack(t_stack **stack_a, t_stack **stack_b)
 		*stack_b = new;
 		printf(" else:on est la -> %d\n", (*stack_b)->nb);
 	}
-	delete_first(&stack_a);
-
+	delete_first(stack_a);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 17:08:13 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/20 17:28:37 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/09/25 16:29:58 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ void	swap_list(t_stack *stack, int position, int position_one)
 
 	list = search_list(stack, position);
 	list_one = search_list(stack, position_one);
-	printf("position in list-> %d, at postion (%d)\n", list->nb, position);
-	printf("position in list-> %d, at postion (%d)\n", list_one->nb, position_one);
 	tm = list->nb;
 	list->nb = list_one->nb;
 	list_one->nb = tm;
