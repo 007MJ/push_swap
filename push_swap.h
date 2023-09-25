@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 14:50:30 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/20 19:47:32 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/09/24 19:20:49 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int				ft_strlen(char *str);
 typedef struct s_stack
 {
 	int				nb;
+	int				index;
 	struct	s_stack	*next;
 }	t_stack;
 
@@ -41,19 +42,18 @@ typedef struct s_info
 t_stack		*new_stack(void);
 void		add_last(t_stack	*lst, int newnb);
 void		swap_list(t_stack *stack, int position, int position_one);
-void		struc_infos(t_infos *info, int position, int position_one, char *str);
-void		swap_a_b_stack(t_stack *stack_a, t_stack *stack_b, t_infos *info);
-void		push_b_on_a(t_stack *stack_b, t_stack *stack_a, t_infos *infos);
-void		change_head_list(t_stack *stack, int element, int position);
-void		change_tail_list(t_stack *stack, int data);
+void		rr(t_stack **first, t_stack **second);
+void		rotate_a(t_stack **stack, char *str);
+void		reverse_rotate_a(t_stack **stack, char *str);
+void		push_stack(t_stack **first_stack, t_stack **second_stack);
 t_stack		*search_list(t_stack *stack, int position);
-t_stack		*delete_list(t_stack *stack, int position);
+void		delete_first(t_stack **stack);
 char		**ft_split(const char *s, char c);
-t_stack		*on_stack(char *str, t_stack *save);
+t_stack		*add_on_stack(char *str, t_stack *save);
 t_stack		*argc_bigger_two(char **argv, int len_argc);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 void		printlst(t_stack	*stack);
-void		swap_a_b(t_stack *list, t_infos *infos);
+void		swap_a_b(t_stack *list, char *str);
 int			lstsize(t_stack *lst);
 # endif
 

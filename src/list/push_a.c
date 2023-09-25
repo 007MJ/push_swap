@@ -1,37 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   add_last.c                                         :+:      :+:    :+:   */
+/*   push_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 18:35:47 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/21 15:03:17 by mnshimiy         ###   ########.fr       */
+/*   Created: 2023/09/20 17:21:18 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/09/22 20:27:54 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	add_last(t_stack *lst, int newnb)
+void	push_stack(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	*new;
+	ft_putstr("pa\n");
+	t_stack *new;
 
 	new = malloc(sizeof(t_stack));
-	if (!new)
+	if(!new)
 		return ;
-	new->nb = newnb;
-	new->next = NULL;
-	if (lst == NULL)
+	if (*stack_a == NULL)
+		return ;
+	if (*stack_b == NULL)
 	{
-		lst = new;
+		printf("if : on est la -> %p\n", stack_b);
+		new->nb = (*stack_a)->nb;
+		new->next = NULL;
+		*stack_b = new;
+		printf("if : on est la -> %p\n", stack_b);
 	}
 	else
 	{
-		t_stack	*current;
-
-		current = lst;
-		while (current->next != NULL)
-			current = current->next;
-		current->next = new;
+		new->nb = (*stack_a)->nb;
+		new->next = (*stack_b);
+		*stack_b = new;
+		printf(" else:on est la -> %d\n", (*stack_b)->nb);
 	}
+	delete_first(&stack_a);
+
 }
+

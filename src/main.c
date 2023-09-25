@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:53:17 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/19 23:29:58 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/09/24 19:09:41 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,18 @@
 int	main (int argc, char *argv[])
 {
 	t_stack	*stack;
+	t_stack	*stack_b;
 	t_infos	*info;
 
 	stack = malloc(sizeof(t_stack));
+	stack_b = NULL;
 	info = malloc(sizeof(t_infos));
-	if (argc == 2)
-	{
-		if (not_numbe(argv[1]) == -1)
-			return (-1);
-		on_stack(argv[1], stack);
-		printlst(stack);
-		printf("size lst -> %d\n", lstsize(stack));
-	}
-	else if (argc > 2)
-	{
-		stack = argc_bigger_two(argv, argc);
-		// swap_a(stack);
-		// swap_list(stack, 3, 6);
-		// info->position = 1;
-		// info->position_one = 2;
-		// info->str = "sa\n";
-		
-		printlst(stack);
-		printf("size lst -> %d\n", lstsize(stack));
-	}
-	else
-		ft_putstr("Need 2 or more argc !\n");
-	free(stack);
+
+	stack = argc_bigger_two(argv, argc);
+
+	// first_be_last(&stack);
+	rotate_a(&stack, "ra");
+	printlst(stack);
+	printlst(stack_b);
+	// free(stack);
 }

@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struc_infos.c                                      :+:      :+:    :+:   */
+/*   reverse_rotate_a.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 18:55:15 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/19 23:28:47 by mnshimiy         ###   ########.fr       */
+/*   Created: 2023/09/24 15:24:46 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/09/24 19:13:08 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	struc_infos(t_infos *info, int position, int position_one, char *str)
+void	reverse_rotate_a(t_stack **stack, char *str)
 {
-	info->position = position;
-	info->position_one = position_one;
-	info->str = str;
+	t_stack	*current;
+	t_stack	*new;
+	int		i;
+
+	i = 1;
+	ft_putstr("rra\n");
+	new = new_stack();
+	current = search_list(*stack, lstsize(*stack) -1);
+	new = search_list(*stack, lstsize(*stack) -2);
+	new->next = NULL;
+	current->next = *stack;
+	*stack = current;
 }

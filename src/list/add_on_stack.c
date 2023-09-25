@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printlst.c                                         :+:      :+:    :+:   */
+/*   add_on_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 17:09:44 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/21 11:35:06 by mnshimiy         ###   ########.fr       */
+/*   Created: 2023/09/05 19:59:36 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/09/24 16:15:51 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	printlst(t_stack	*stack)
-{
-	t_stack *current;
 
-	current = stack;
-	while (current != NULL)
+t_stack		*add_on_stack(char *str, t_stack *save)
+{
+	// split
+	// malloc le nombre de space
+	// mettre en nombre
+	int		i;
+	int		nb;
+	char	**tab;
+
+	tab = ft_split(str, ' ');
+	i = 0;
+	save->nb = ft_atoi(tab[i]);
+	i++;
+	while (tab[i] != NULL)
 	{
-		printf("%d\n", current->nb);
-		current = current->next;
+		add_last(save, ft_atoi(tab[i]));
+		i++;
 	}
+	return (save);
 }

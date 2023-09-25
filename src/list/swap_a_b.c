@@ -6,14 +6,14 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:31:31 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/19 23:12:09 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/09/21 21:17:29 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	swap_a_b(t_stack *lst, t_infos *infos)
+void	swap_a_b(t_stack *lst, char *str)
 {
-	swap_list(lst, infos->position, infos->position_one);
-	ft_putstr(infos->str);
+	swap_list(lst, 1, 2);
+	ft_putstr(str);
 }

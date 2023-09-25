@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 19:44:12 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/07 19:53:38 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/09/24 16:41:50 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	lstsize(t_stack *lst)
 	t_stack	*current;
 	int		i;
 
-	i = 0;
+	i = 1;
 	current = lst;
 	while (current != NULL)
 	{

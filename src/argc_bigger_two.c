@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 15:46:08 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/19 15:56:05 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/09/24 16:16:16 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,6 @@ t_stack	*argc_bigger_two(char **argv, int len_argc)
 	stack = new_stack();
 	if (parsing_check(argv) == -1)
 		return NULL;
-	return (on_stack(joinargc(argv, len_argc), stack));
+	return (add_on_stack(joinargc(argv, len_argc), stack));
 }
 
