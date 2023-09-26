@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 17:18:04 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/25 20:26:44 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/09/25 20:29:16 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	sort_number(t_stack **stack)
 	second = search_list(*stack, 2);
 	three = search_list(*stack, 3);
 	list = search_list(*stack, lstsize(*stack));
-	if ((*stack)->nb < list->nb)
+	if ((*stack)->nb > list->nb)
 		rotate_a(stack, "ra");
-	if ((*stack)->nb < second->nb && (*stack)->nb < list->nb && (*stack)->nb > three->nb)
+	if ((*stack)->nb > second->nb && (*stack)->nb < list->nb && (*stack)->nb > three->nb)
 		swap_a_b(*stack, "sa\n");
 }
 
