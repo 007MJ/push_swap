@@ -6,68 +6,83 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 21:18:24 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/28 16:14:18 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/02 09:55:20 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	index_list(t_stack **stack)
+void	set_list(t_stack **stack)
 {
-	int		i;
 	t_stack	*current;
 
 	current = *stack;
-	i = -1;
 	while (current != NULL)
 	{
-		current->index = i;
+		current->on = 0;
 		current = current->next;
 	}
 }
 
-void	put_index(t_stack **stack)
+int	less_list(t_stack **stack)
 {
 	t_stack *current;
-	t_stack *tmp;
+	int		tmp;
+
+	current = *stack;
+	while (current != NULL)
+	{
+		if (current->on == 0 )
+		{
+			tmp = current->nb;
+			break ;
+		}
+		current = current->next;
+	}
+	current = *stack;
+	while (current != NULL)
+	{
+		if (current->on == 0 && tmp > current->nb && current->nb != tmp)
+		{
+			tmp = current->nb;
+		}
+		current = current->next;
+	}
+	return (tmp);
+}
+
+void	is_nb_list(t_stack **stack, int i)
+{
+	t_stack	*current;
+
+	current = *stack;
+	while (current != NULL)
+	{
+		if (current->nb == less_list(stack))
+		{
+			current->on = 1;
+			current->index = i;
+			break;
+		}
+		current = current->next;
+	}
+}
+
+void put_index(t_stack **stack)
+{
+	t_stack	*current;
 	int		index;
 
 	index = 1;
-	while (index < lstsize(*stack) + 1)
+	current = *stack;
+	while (current != NULL)
 	{
-		tmp = search_list(*stack, index);
-		// printf("next->number %d\n", tmp->nb);
-		current = *stack;
-		while (current != NULL)
-		{
-			if (current->index == -1)
-			{
-				if (tmp->nb < current->nb)
-					tmp = current;
-			}
-			current = current->next;
-		}
-		tmp->index = index;
+		is_nb_list(stack, index);
+		current = current->next;
 		index++;
 	}
 }
-// int	is_less_move(int index, int middle)
-// {
-// 	// l'index va me dire il es ou par rapport a la moiter
-// 	// si plus grand que le middle regarde le nombre de ++ pour aller ver le haut
-// 	// si plus petit regarde le nombre de -- pour aller sur top
-// }
 
-// int	between_chunk(t_stack **stack, int chunk, int number)
-// {
-// 	// etre dans ces chunks
-// 	// faire le moins de movement
-// 	// etre le plus petit
-// }
-// // faire une function qui va regarde que nombre prend moins de mouvement
-// int hold_number(t_stack **stack)
-// {
-// }
 void	printindex(t_stack	*stack)
 {
 	t_stack *current;
@@ -83,6 +98,7 @@ void	printindex(t_stack	*stack)
 
 void		sort_hundred(t_stack **stack, t_stack **stack_b)
 {
+	// set_list(stack);
 	put_index(stack);
 	printindex(*stack);
 }

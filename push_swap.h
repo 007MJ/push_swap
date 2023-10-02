@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 14:50:30 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/28 13:55:17 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/09/28 19:50:23 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct s_stack
 	int				nb;
 	int				index;
 	int				chunks;
+	int				on;
 	struct	s_stack	*next;
 }	t_stack;
 
