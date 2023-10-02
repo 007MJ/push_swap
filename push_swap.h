@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 14:50:30 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/28 19:50:23 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/02 12:27:10 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void		push_b(t_stack **stack_a, t_stack **stack_b);
 t_stack		*search_list(t_stack *stack, int position);
 void		delete_first(t_stack **stack);
 char		**ft_split(const char *s, char c);
-t_stack		*add_on_stack(char *str, t_stack *save);
+t_stack		*add_on_stack(char **str, t_stack *save);
 t_stack		*argc_bigger_two(char **argv, int len_argc);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 void		printlst(t_stack	*stack);
@@ -62,4 +62,6 @@ int			lstsize(t_stack *lst);
 void		sort_three(t_stack **stack);
 void		sort_five(t_stack **stack, t_stack **stack_b);
 void		sort_hundred(t_stack **stack, t_stack **stack_b);
+void		put_index(t_stack **stack);
+void		chunks(t_stack **stack, int nb);
 # endif

@@ -1,33 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_hundred.c                                     :+:      :+:    :+:   */
+/*   chunks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/27 21:18:24 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/02 14:13:08 by mnshimiy         ###   ########.fr       */
+/*   Created: 2023/10/02 10:08:05 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/10/02 14:21:35 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	printchunks(t_stack **stack)
-{
-	t_stack *current;
+// 100 nombre par chunks 5 chunks
 
-	current = *stack;
-	while (current != NULL)
-	{
-		// printf("chunks-> {%d}", current->chunks);
-		current = current->next;
-	}
+
+int	nb_per_chunks(int len, int nb_chunks)
+{
+	int	nb_per_chunks;
+	int	nb_remaing;
+
+	nb_per_chunks = len / nb_chunks;
+	nb_remaing = len % nb_chunks;
+	if (nb_remaing > 0)
+		nb_per_chunks++;
+	return (nb_per_chunks);
 }
 
-
-void		sort_hundred(t_stack **stack, t_stack **stack_b)
+void	chunks(t_stack **stack, int nb)
 {
-
-	chunks(stack, 5);
+	t_stack	*current;
+	int		chunks_size = nb_per_chunks(lstsize(*stack), nb);
+	current = *stack;
 	put_index(stack);
+	while (current != NULL)
+	{
+		current->chunks = (current->index / chunks_size);
+		printf("list on index -> %d\n", current->chunks);
+		current = current->next;
+	}
 }

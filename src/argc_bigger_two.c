@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 15:46:08 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/24 16:16:16 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/02 14:17:24 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,51 +28,29 @@ int	parsing_check(char **argv)
 	return (1);
 }
 
-int len_of_strone(char **argv)
-{
-	int	i;
-	int	len;
-
-
-	i = 1;
-	len = 0;
-	while (argv[i] != NULL)
-	{
-		len += ft_strlen(argv[i]);
-		i++;
-	}
-	return (len);
-}
-
-char *joinargc(char **argv, int len_argc)
+t_stack		*argc_one(char **str, t_stack *save)
 {
 	int		i;
-	int		y;
-	int		len;
-	char	*strone;
+	int		nb;
+	char	**tab;
 
-
-	strone = NULL;
-	len = len_of_strone(argv);
-	strone = malloc(sizeof(len) + 1 + len_argc);
-	i = 1;
-	y = 0;
-	len = 0;
-	while (argv[i] != NULL)
+	tab = str;
+	i = 0;
+	save->nb = ft_atoi(tab[i]);
+	i++;
+	while (tab[i])
 	{
-		y = 0;
-		while (argv[i][y] != '\0')
-		{
-			strone[len] = argv[i][y];
-			len++;
-			y++;
-		}
+		add_last(save, ft_atoi(tab[i]));
 		i++;
-		strone[len] = ' ';
-		len++;
-
 	}
-	strone[len] = '\0';
+	return (save);
+}
+
+char **joinargc(char *argv)
+{
+	char **strone;
+
+	strone = ft_split(argv, ' ');
 	return (strone);
 }
 
@@ -83,6 +61,10 @@ t_stack	*argc_bigger_two(char **argv, int len_argc)
 	stack = new_stack();
 	if (parsing_check(argv) == -1)
 		return NULL;
-	return (add_on_stack(joinargc(argv, len_argc), stack));
+	if (len_argc == 2)
+	{
+		return(argc_one(joinargc(argv[1]), stack));
+	}
+	return (add_on_stack(argv, stack));
 }
 
