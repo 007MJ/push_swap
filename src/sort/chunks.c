@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 10:08:05 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/02 14:21:35 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/03 20:26:49 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	chunks(t_stack **stack, int nb)
 	while (current != NULL)
 	{
 		current->chunks = (current->index / chunks_size);
-		printf("list on index -> %d\n", current->chunks);
 		current = current->next;
 	}
 }
