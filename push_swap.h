@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 14:50:30 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/03 17:22:37 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/04 16:38:30 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,7 @@ void		sort_five(t_stack **stack, t_stack **stack_b);
 void		sort_hundred(t_stack **stack, t_stack **stack_b);
 void		put_index(t_stack **stack);
 void		chunks(t_stack **stack, int nb);
-int			hold_number(t_stack **stack, int chunks, int middle);
+int			hold_number(t_stack **stack, int chunks, int len);
+t_stack		*is_first(t_stack **stack, int chunk , int middle);
+int			fund_chunks(t_stack **stack, int chunk, int middle, int n);
 # endif
