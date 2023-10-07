@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:53:17 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/03 17:29:28 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/07 12:05:11 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ int	main (int argc, char *argv[])
 	t_stack	*stack;
 	t_stack	*stack_b;
 
-	stack = malloc(sizeof(t_stack));
-	stack = argc_bigger_two(argv, argc);
+	stack_b = malloc(sizeof(t_stack));
+	stack_b = argc_bigger_two(argv, argc);
 	push_swap(&stack, &stack_b);
 	// printf("stack A : \n");
 	// printlst(stack);
 // 	printf("|-----------|\n");
-// 	printf("stack B : \n");
-// 	printlst(stack_b);
+	printf("stack B : \n");
+	printlst(stack_b);
 }

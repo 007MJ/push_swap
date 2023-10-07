@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 13:30:37 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/07 11:41:03 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/07 12:04:06 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ int count_move(t_stack **stack, t_stack *list)
 		current = current->next;
 		i++;
 	}
-	printf("return of count_move %d\n", i);
 	return (i);
 }
 
