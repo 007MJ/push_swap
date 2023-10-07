@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 21:18:24 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/04 15:18:05 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/07 11:38:25 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ void		sort_hundred(t_stack **stack, t_stack **stack_b)
 
 	chunks(stack, 5);
 	//faire foncionne la function hold
-	hold_number(stack, 0, 6);
+	hold_number(stack, 0, 100)
 	put_index(stack);
 }

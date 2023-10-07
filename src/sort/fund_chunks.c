@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 16:32:50 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/04 17:49:17 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/07 11:07:04 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ int	fund_chunks(t_stack **stack, int chunk, int middle, int n)
 			current = current->next;
 		}
 	}
+	printf("for fund %d and much  %d\n", n , y);
 	return (y);
 }
-
