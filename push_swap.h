@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 14:50:30 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/07 12:41:19 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/07 13:31:17 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,5 @@ void		chunks(t_stack **stack, int nb);
 int			hold_number(t_stack **stack, int chunks, int len);
 t_stack		*is_first(t_stack **stack, int chunk , int middle);
 int			fund_chunks(t_stack **stack, int chunk, int middle, int n);
-int			is_big(t_stack *stack, t_stack **stack_b);
+int			check_stack_b(t_stack *stack, t_stack **stack_b);
 # endif
