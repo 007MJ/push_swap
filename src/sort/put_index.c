@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 21:18:24 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/03 20:25:14 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/10 20:07:16 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ void	printindex(t_stack	*stack)
 	current = stack;
 	while (current != NULL)
 	{
-		printf("list nb %d | index [%d]\n", current->nb , current->index);
 		current = current->next;
 	}
 }

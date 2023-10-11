@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 13:30:37 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/07 12:04:06 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/11 01:07:09 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_stack*	is_second(t_stack **stack, int chunk , int middle)
 	current = *stack;
 	if (fund_chunks(stack, chunk, middle, 2) == 0)
 	{
-		printf("is seconde return NULL\n");
+		// printf("is seconde return NULL\n");
 		return (NULL);
 	}
 	while (current != NULL && i <= middle)
@@ -53,22 +53,7 @@ t_stack*	is_second(t_stack **stack, int chunk , int middle)
 	return (lstmp);
 }
 
-int count_move(t_stack **stack, t_stack *list)
-{
-	int i;
-	t_stack *current;
 
-	current = *stack;
-	i = 1;
-	while (current != NULL && list != NULL)
-	{
-		if (list->index == current->index)
-			return (i);
-		current = current->next;
-		i++;
-	}
-	return (i);
-}
 
 void print(t_stack **stack)
 {
@@ -88,25 +73,20 @@ int hold_number(t_stack **stack, int chunks, int len)
 	int	count_first;
 	int	count_second;
 
-	/// la function is_first elle marche pas !!
-	count_first = 0;
-	count_second = 0;
+
+	count_first = -1;
+	count_second = -1;
 	first = is_first(stack, chunks, len / 2);
-		if (first == NULL)
-			printf("if first NULL ->\n");
-		else
-			printf("is first TRUE %d\n", first->nb);
 	second = is_second(stack, chunks, len / 2);
-	if (second == NULL)
-		printf("if second NULL ->\n");
-	else
-		printf("is second TRUE %d\n", second->nb);
-	count_first =  count_move(stack, first);
-	count_second = count_move(stack, second);
-	if (count_move(stack, first) > count_move(stack, second))
-		return (1);
-	else
-		return (2);
-	print(stack);
-	return (1);
+	if (first == NULL && second == NULL)
+		return (-1);
+	if (first != NULL)
+		count_first = first_count_move(stack, first);
+	if (second != NULL)
+		count_second = second_count_move(stack, second);
+	if (count_first != -1 && count_first <= count_second)
+		return (first->index);
+	else if (second != NULL && count_first > count_second && count_first)
+		return (second->index);
+	return (-1);
 }

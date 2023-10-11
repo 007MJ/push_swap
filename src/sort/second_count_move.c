@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   add_last.c                                         :+:      :+:    :+:   */
+/*   second_count_move.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 18:35:47 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/10 19:48:18 by mnshimiy         ###   ########.fr       */
+/*   Created: 2023/10/10 20:27:20 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/10/10 20:38:28 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	add_last(t_stack *lst, int newnb)
+int second_count_move(t_stack **stack, t_stack *list)
 {
-	t_stack	*new;
+	int i;
+	t_stack *current;
 
-	new = malloc(sizeof(t_stack));
-	if (!new)
-		return ;
-	new->nb = newnb;
-	new->next = NULL;
-	if (lst == NULL)
+	current = *stack;
+	i = 1;
+	while (current != NULL && list != NULL)
 	{
-		lst = new;
+		if (list->index == current->index)
+			return (lstsize(*stack) - i);
+		current = current->next;
+		i++;
 	}
-	else
-	{
-		t_stack	*current;
-
-		current = lst;
-		while (current->next != NULL)
-			current = current->next;
-		current->next = new;
-	}
+	return (lstsize(*stack) - i);
 }
