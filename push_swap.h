@@ -31,6 +31,8 @@ typedef struct s_stack
 	int				index;
 	int				chunks;
 	int				on;
+	int				move;
+	int				ra_rra;
 	struct	s_stack	*next;
 }	t_stack;
 
@@ -64,7 +66,7 @@ void		sort_five(t_stack **stack, t_stack **stack_b);
 void		sort_hundred(t_stack **stack, t_stack **stack_b);
 void		put_index(t_stack **stack);
 void		chunks(t_stack **stack, int nb);
-int			hold_number(t_stack **stack, int chunks, int len);
+t_stack		*hold_number(t_stack **stack, int chunks, int len);
 t_stack		*is_first(t_stack **stack, int chunk , int middle);
 int			fund_chunks(t_stack **stack, int chunk, int middle, int n);
 void		check_stack_b(t_stack **stack, t_stack **stack_b);

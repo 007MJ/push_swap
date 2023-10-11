@@ -24,47 +24,28 @@ void	printchunks(t_stack **stack)
 	}
 }
 
-int	much_get_up(t_stack **stack, int index_list)
+
+void	get_list_up(t_stack **stack, t_stack *index_list)
 {
-	int		i;
-	t_stack	*current;
+	int	i;
 
 	i = 1;
-	current = *stack;
-	while (current != NULL)
+	if (index_list ->ra_rra == 1)
 	{
-		if (current->index == index_list)
-			return (i);
-		current = current->next;
-		i++;
-	}
-	return (i);
-}
-
-void	get_list_up(t_stack **stack, int index_list)
-{
-	int	many;
-	int	middle;
-
-	many = much_get_up(stack, index_list);
-	middle = lstsize(*stack) / 2;
-	if (middle % 2 != 0)
-		middle ++;
-	if (many < middle)
-	{
-		while (many > 1)
+		printf("list count -> %d\n", index_list->move);
+		while (index_list->move > i)
 		{
 			rotate_a(stack, "ra\n");
-			many--;
+			i++;
 		}
 	}
-	if (many > middle)
+	if (index_list->ra_rra == 2)
 	{
-		many = lstsize(*stack) - many;
-		while (many > 1)
+		printf("list count -> %d", index_list->move);
+		while (index_list->move >= i)
 		{
 			reverse_rotate_a(stack, "rra\n");
-			many--;
+			i++;
 		}
 	}
 }
@@ -76,13 +57,13 @@ void	up_down(t_stack **stack)
 
 	i = 0;
 	last = search_list(*stack, lstsize(*stack));
-	while (i == 0)
+	while (i == 0 && (*stack)->nb > last->nb)
 	{
 		if ((*stack)->nb < last->nb)
 			i = 1;
 		else
 		{
-			if ((*stack)->nb > last->nb)
+			if ((*stack)->nb > last->nb && i == 0)
 				rotate_a(stack, "ra\n");
 		}
 	}
@@ -91,21 +72,19 @@ void	up_down(t_stack **stack)
 
 void		sort_hundred(t_stack **stack, t_stack **stack_b)
 {
-	int	i;
-	int	index_list;
+	int		i;
+	t_stack	*index_list;
 
 	i = 0;
 	chunks(stack, 5);
-	while (i < 5)
+	put_index(stack);
+	while (i <= 5 && is_followed(stack) != 1)
 	{
-		index_list = hold_number(stack, i, 100);
-		if (is_followed(stack) == 1)
-			break ;
 		up_down(stack);
+		index_list = hold_number(stack, i, 100);
 		get_list_up(stack, index_list);
 		check_stack_b(stack, stack_b);
-		put_index(stack);
-		if (index_list == -1)
+		if (index_list == NULL)
 			i++;
-	}
+ 	}
 }

@@ -66,7 +66,7 @@ void print(t_stack **stack)
 	}
 }
 
-int hold_number(t_stack **stack, int chunks, int len)
+t_stack  *hold_number(t_stack **stack, int chunks, int len)
 {
 	t_stack *first;
 	t_stack *second;
@@ -79,14 +79,22 @@ int hold_number(t_stack **stack, int chunks, int len)
 	first = is_first(stack, chunks, len / 2);
 	second = is_second(stack, chunks, len / 2);
 	if (first == NULL && second == NULL)
-		return (-1);
+		return (NULL);
 	if (first != NULL)
+	{
 		count_first = first_count_move(stack, first);
+		first->move = count_first;
+		first->ra_rra = 1;
+	}
 	if (second != NULL)
+	{
 		count_second = second_count_move(stack, second);
+		second->move = count_second;
+		second->ra_rra  = 2;
+	}
 	if (count_first != -1 && count_first <= count_second)
-		return (first->index);
+		return (first);
 	else if (second != NULL && count_first > count_second && count_first)
-		return (second->index);
-	return (-1);
+		return (second);
+	return (NULL);
 }
