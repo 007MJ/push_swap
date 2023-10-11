@@ -16,7 +16,6 @@ void	is_big(t_stack **stack, t_stack **stack_b)
 {
 	if ((*stack)->nb < (*stack_b)->nb)
 	{
-		printf("stack a -> %d\nstack b -> %d\n", (*stack)->nb , (*stack_b)->nb);
 		rotate_a(stack_b, "rb\n");
 	}
 	else

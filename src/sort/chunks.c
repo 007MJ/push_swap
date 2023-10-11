@@ -31,11 +31,13 @@ void	chunks(t_stack **stack, int nb)
 {
 	t_stack	*current;
 	int		chunks_size = nb_per_chunks(lstsize(*stack), nb);
+
 	current = *stack;
 	put_index(stack);
 	while (current != NULL)
 	{
 		current->chunks = (current->index / chunks_size);
+		printf("current->chunks -> %d", (current->index / chunks_size));
 		current = current->next;
 	}
 }

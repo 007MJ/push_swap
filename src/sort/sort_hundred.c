@@ -19,7 +19,7 @@ void	printchunks(t_stack **stack)
 	current = *stack;
 	while (current != NULL)
 	{
-		// printf("chunks-> {%d}", current->chunks);
+		printf("number -> %d chunks-> {%d} \n", current->nb , current->chunks);
 		current = current->next;
 	}
 }
@@ -76,15 +76,16 @@ void		sort_hundred(t_stack **stack, t_stack **stack_b)
 	t_stack	*index_list;
 
 	i = 0;
-	chunks(stack, 5);
 	put_index(stack);
-	while (i <= 5 && is_followed(stack) != 1)
-	{
-		up_down(stack);
-		index_list = hold_number(stack, i, 100);
-		get_list_up(stack, index_list);
-		check_stack_b(stack, stack_b);
-		if (index_list == NULL)
-			i++;
- 	}
+	chunks(stack, 5);
+	// while (i <= 5 && is_followed(stack) != 1)
+	// {
+	// 	up_down(stack);
+	// 	index_list = hold_number(stack, i, 100);
+	// 	get_list_up(stack, index_list);
+	// 	check_stack_b(stack, stack_b);
+	// 	if (index_list == NULL)
+	// 		i++;
+ 	// }
+	// printchunks(stack);
 }
