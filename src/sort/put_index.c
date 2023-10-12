@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 21:18:24 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/10 20:07:16 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/11 21:01:08 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,22 @@ int	less_list(t_stack **stack)
 		}
 		current = current->next;
 	}
+	printf("small %d\n", tmp);
 	return (tmp);
 }
 
 void	is_nb_list(t_stack **stack, int i)
 {
 	t_stack	*current;
+	int		less;
 
 	current = *stack;
 	while (current != NULL)
 	{
-		if (current->nb == less_list(stack))
+		less =  less_list(stack);
+		if (current->nb == less)
 		{
+			printf("less_list->%d\n",  less);
 			current->on = 1;
 			current->index = i;
 			break;
@@ -64,6 +68,7 @@ void	printindex(t_stack	*stack)
 	while (current != NULL)
 	{
 		current = current->next;
+		// printf("current->nb %d\ncurrent->index %d\n",current->nb, current->index);
 	}
 }
 
@@ -80,7 +85,7 @@ void put_index(t_stack **stack)
 		current = current->next;
 		index++;
 	}
-	// printindex(*stack);
+	printindex(*stack);
 }
 
 
