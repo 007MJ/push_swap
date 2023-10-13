@@ -6,51 +6,16 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 13:30:37 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/11 01:07:09 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/13 01:51:03 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-// trouve le plus petit nombre qui fais parti d'un chunks
-// ensuite regard si son index et plus grands ou plus petit faire un comparaison avec les autre nombre
-
 
 t_stack*	is_second(t_stack **stack, int chunk , int middle)
 {
-	t_stack *current;
-	t_stack	*lstmp;
-	int		i;
-
-	i = 1;
-	current = *stack;
-	if (fund_chunks(stack, chunk, middle, 2) == 0)
-	{
-		// printf("is seconde return NULL\n");
-		return (NULL);
-	}
-	while (current != NULL && i <= middle)
-	{
-		current = current->next;
-		i++;
-	}
-	while (current != NULL)
-	{
-		if (current->chunks == chunk && i > middle)
-			lstmp = current;
-		current = current->next;
-		i++;
-	}
-	i = i;
-	current = *stack;
-	while (current != NULL)
-	{
-		if (current->chunks == chunk && lstmp->nb > current->nb && i > middle)
-			lstmp = current;
-		current = current->next;
-		i++;
-	}
-	return (lstmp);
+	return (NULL);
 }
 
 
@@ -77,7 +42,7 @@ t_stack  *hold_number(t_stack **stack, int chunks, int len)
 	count_first = -1;
 	count_second = -1;
 	first = is_first(stack, chunks, len / 2);
-	second = is_second(stack, chunks, len / 2);
+	second = is_second(stack,chunks, len / 2);
 	if (first == NULL && second == NULL)
 		return (NULL);
 	if (first != NULL)
@@ -86,15 +51,15 @@ t_stack  *hold_number(t_stack **stack, int chunks, int len)
 		first->move = count_first;
 		first->ra_rra = 1;
 	}
-	if (second != NULL)
-	{
-		count_second = second_count_move(stack, second);
-		second->move = count_second;
-		second->ra_rra  = 2;
-	}
+	// if (second != NULL)
+	// {
+	// 	count_second = second_count_move(stack, second);
+	// 	second->move = count_second;
+	// 	second->ra_rra  = 2;
+	// }
 	if (count_first != -1 && count_first <= count_second)
 		return (first);
-	else if (second != NULL && count_first > count_second && count_first)
-		return (second);
+	// else if (second != NULL && count_first > count_second && count_first)
+	// 	return (second);
 	return (NULL);
 }

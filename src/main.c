@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:53:17 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/11 20:00:00 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/13 00:36:34 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ int	main (int argc, char *argv[])
 	// add_last(stack_b, 112);
 	stack = argc_bigger_two(argv, argc);
 	push_swap(&stack, &stack_b);
-	// printf("stack A : \n");
-	// printlst(stack);
-	// 	printf("|-----------|\n");
-	// printf("stack B : \n");
-	// printlst(stack_b);
+	printf("stack A : \n");
+	printlst(stack);
+		printf("|-----------|\n");
+	printf("stack B : \n");
+	printlst(stack_b);
 }

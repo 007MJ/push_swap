@@ -6,13 +6,13 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 21:18:24 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/11 21:01:08 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/13 01:49:26 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int	less_list(t_stack **stack)
+int	small_list(t_stack **stack)
 {
 	t_stack *current;
 	int		tmp;
@@ -36,25 +36,23 @@ int	less_list(t_stack **stack)
 		}
 		current = current->next;
 	}
-	printf("small %d\n", tmp);
 	return (tmp);
 }
 
-void	is_nb_list(t_stack **stack, int i)
+void	ticket_list(t_stack **stack, int i)
 {
 	t_stack	*current;
-	int		less;
+	int		small;
 
 	current = *stack;
+	small = small_list(stack);
 	while (current != NULL)
 	{
-		less =  less_list(stack);
-		if (current->nb == less)
+		if (current->nb == small)
 		{
-			printf("less_list->%d\n",  less);
+			printf("index %d\n", i);
 			current->on = 1;
 			current->index = i;
-			break;
 		}
 		current = current->next;
 	}
@@ -67,8 +65,8 @@ void	printindex(t_stack	*stack)
 	current = stack;
 	while (current != NULL)
 	{
+		// printf("current->index %d\n current->nb %d\n", current->index, current->nb);
 		current = current->next;
-		// printf("current->nb %d\ncurrent->index %d\n",current->nb, current->index);
 	}
 }
 
@@ -76,13 +74,14 @@ void put_index(t_stack **stack)
 {
 	t_stack	*current;
 	int		index;
+	int		size;
 
-	index = 1;
+	size = lstsize(*stack);
+	index = 0;
 	current = *stack;
-	while (current != NULL)
+	while (index <= size)
 	{
-		is_nb_list(stack, index);
-		current = current->next;
+		ticket_list(stack, index);
 		index++;
 	}
 	printindex(*stack);

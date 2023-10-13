@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:42:31 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/11 01:40:08 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/13 01:56:34 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,8 @@
 void	is_big(t_stack **stack, t_stack **stack_b)
 {
 	if ((*stack)->nb < (*stack_b)->nb)
-	{
 		rotate_a(stack_b, "rb\n");
-	}
-	else
-		push_b(stack, stack_b);
+
 }
 
 void check_stack_b(t_stack **stack, t_stack **stack_b)
