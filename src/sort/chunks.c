@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 10:08:05 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/13 00:40:45 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/17 19:25:22 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,18 @@ int	nb_per_chunks(int len, int nb_chunks)
 	return (nb_per_chunks);
 }
 
-void	chunks(t_stack **stack, int nb)
+t_stack	**chunks(t_stack **stack, int nb)
 {
 	t_stack	*current;
 	int		chunks_size;
 
 	chunks_size =  nb_per_chunks(lstsize(*stack), nb);
 	current = *stack;
-	put_index(stack);
 	while (current != NULL)
 	{
 		current->chunks = (current->index / chunks_size);
-		// printf("current->chunks-> %d\n", current->chunks);
+		// printf("index-number-> %d and chunks->%d\n", current->index, current->chunks);
 		current = current->next;
 	}
+	return (stack);
 }

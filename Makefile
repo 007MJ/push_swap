@@ -6,14 +6,15 @@
 #    By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/15 18:06:53 by mnshimiy          #+#    #+#              #
-#    Updated: 2023/10/11 01:35:11 by mnshimiy         ###   ########.fr        #
+#    Updated: 2023/10/17 19:02:43 by mnshimiy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME   = push_swap
 CC     = gcc
-CGLAGS = -Wall -Werror -Wextra -g -fsanitize=address
+CGLAGS = -Wall -Werror -Wextraqui
+
 RM     = rm -fr
 
 

@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 21:18:24 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/13 01:49:26 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/17 19:18:29 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,27 +50,28 @@ void	ticket_list(t_stack **stack, int i)
 	{
 		if (current->nb == small)
 		{
-			printf("index %d\n", i);
 			current->on = 1;
 			current->index = i;
 		}
 		current = current->next;
+		// if (i == lstsize(*stack))
+		// 	// current->next = NULL;
 	}
 }
 
-void	printindex(t_stack	*stack)
-{
-	t_stack *current;
+// void	printindex(t_stack	*stack)
+// {
+// 	t_stack *current;
 
-	current = stack;
-	while (current != NULL)
-	{
-		// printf("current->index %d\n current->nb %d\n", current->index, current->nb);
-		current = current->next;
-	}
-}
+// 	current = stack;
+// 	while (current != NULL)
+// 	{
+// 		printf("number-list ->%d and inde ->%d\n", current->nb, current->index);
+// 		current = current->next;
+// 	}
+// }
 
-void put_index(t_stack **stack)
+t_stack	**put_index(t_stack **stack, int i)
 {
 	t_stack	*current;
 	int		index;
@@ -84,7 +85,8 @@ void put_index(t_stack **stack)
 		ticket_list(stack, index);
 		index++;
 	}
-	printindex(*stack);
+	chunks(stack , i);
+	return (stack);
 }
 
 
