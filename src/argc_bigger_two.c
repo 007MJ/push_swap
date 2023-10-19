@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 15:46:08 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/02 14:17:24 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/18 18:27:07 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	parsing_check(char **argv)
 t_stack		*argc_one(char **str, t_stack *save)
 {
 	int		i;
-	int		nb;
+	// int		nb;
 	char	**tab;
 
 	tab = str;

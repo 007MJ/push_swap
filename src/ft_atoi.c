@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 01:05:22 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/06 18:38:42 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/18 21:31:44 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ long int ft_atoi(char *str)
 	i = 0;
 	n = 1;
 	res = 0;
-	while (str[i] == ' ')
+	while (str[i] && str[i] == ' ')
 		i++;
 	if (str[i] == '-')
 	{

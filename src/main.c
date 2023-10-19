@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:53:17 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/17 19:30:11 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/18 21:36:28 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,5 @@ int	main (int argc, char *argv[])
 	stack = argc_bigger_two(argv, argc);
 	push_swap(&stack, &stack_b);
 	// printindex(stack);
-	printlst(&stack);
+	// printlst(&stack);
 }

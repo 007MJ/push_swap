@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:42:31 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/13 01:56:34 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/18 18:27:14 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	is_big(t_stack **stack, t_stack **stack_b)
 
 void check_stack_b(t_stack **stack, t_stack **stack_b)
 {
-	int		big;
+	// int		big;
 
 	if (is_followed(stack) == 1)
 		return ;
