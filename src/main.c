@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:53:17 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/18 21:36:28 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/20 01:49:50 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,7 @@ void	push_swap(t_stack **stack, t_stack **stack_b)
 {
 
 	put_index(stack, 5);
-	// let_see(stack);
-	// printindex(*stack);
+	reset_on(stack);
 	if(lstsize(*stack) == 3)
 		sort_three(stack);
 	if (lstsize(*stack) == 5)

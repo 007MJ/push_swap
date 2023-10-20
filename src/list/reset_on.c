@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   first_count_move.c                                 :+:      :+:    :+:   */
+/*   reset_on.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/10 20:21:43 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/19 20:41:46 by mnshimiy         ###   ########.fr       */
+/*   Created: 2023/10/20 01:50:26 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/10/20 01:52:42 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int first_count_move(t_stack **stack, t_stack *list)
+void	reset_on(t_stack **stack)
 {
-	int		i;
 	t_stack	*current;
-	int		middle;
 
 	current = *stack;
-	middle = lstsize(*stack) / 2;
-	i = 1;
-	if (middle % 2 != 0)
-		middle ++;
-	while (current != NULL && list != NULL)
+	while (current != NULL)
 	{
-		if (list->index == current->index)
-			return (i);
+		current->on = 0;
 		current = current->next;
-		i++;
 	}
-	return (i);
 }

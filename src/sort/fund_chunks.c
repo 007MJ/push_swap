@@ -6,13 +6,13 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 16:32:50 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/07 12:04:38 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/19 20:35:46 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int	fund_chunks(t_stack **stack, int chunk, int middle, int n)
+int	fund_chunks(t_stack **stack, int chunk)
 {
 	t_stack *current;
 	int		i;
@@ -21,25 +21,12 @@ int	fund_chunks(t_stack **stack, int chunk, int middle, int n)
 	i = 1;
 	y = 0;
 	current = *stack;
-	if (n == 2)
+	while (current != NULL)
 	{
-		while (current != NULL)
-		{
-			if (current->chunks == chunk && i > middle)
-				y++;
-			i++;
-			current = current->next;
-		}
-	}
-	else
-	{
-		while (current != NULL)
-		{
-			if (current->chunks == chunk && i <= middle)
-				y++;
-			i++;
-			current = current->next;
-		}
+		if (current->chunks == chunk)
+			y++;
+		i++;
+		current = current->next;
 	}
 	return (y);
 }

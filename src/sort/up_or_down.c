@@ -6,13 +6,13 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 21:13:32 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/18 21:21:20 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/19 18:01:41 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	up_or_dwon(t_stack **stack, int move, int up_down)
+void	up_or_down(t_stack **stack, int move, int up_down)
 {
 	if (stack != NULL)
 	{
