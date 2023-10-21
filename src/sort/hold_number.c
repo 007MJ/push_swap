@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 13:30:37 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/20 20:14:44 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/21 14:59:21 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,17 +61,18 @@ t_stack		*less_move(t_stack **stack, int middle, int chunks)
 {
 	t_stack	*first;
 	int		tmp;
+	int		stop;
 
-	first = is_first(stack, chunks);
-	tmp = first_count_move(stack, first);
-	while (first != NULL && first->on == 0)
+	stop = 0;
+	while ( stop != 1)
 	{
 		first = is_first(stack, chunks);
 		tmp = first_count_move(stack, first);
 		if (tmp > middle)
-			tmp	= lstsize(*stack) - tmp;
-		if (first->on == 0 && first-> move > tmp)
+			tmp = lstsize(*stack) - tmp;
+		if (first->move > tmp)
 			first->move = tmp;
+		stop = first->on;
 		first->on = 1;
 	}
 	return (first);

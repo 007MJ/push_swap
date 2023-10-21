@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 21:18:24 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/20 17:26:21 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/21 14:28:21 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,13 +76,16 @@ void		sort_hundred(t_stack **stack, t_stack **stack_b)
 
 	i = 0;
 	reset_on(stack);
-	while (i <= 5 && is_followed(stack) != 1)
-	{
-		up_down(stack);
-		index_list = hold_number(stack, i, 100);
-		up_or_down(stack, index_list->move, index_list->ra_rra);
-		check_stack_b(stack, stack_b);
-		if (index_list == NULL)
-			i++;
-	}
+	index_list = hold_number(stack, i, 100);
+	printf("the return of hold:\nindex_list %d list->on %d list->move %d list->rr_rra %d\n", index_list->nb, index_list->on ,index_list->move, index_list->ra_rra);
+	(void)stack_b;
+	// while (i <= 5 && is_followed(stack) != 1)
+	// {
+	// 	up_down(stack);
+	// 	index_list = hold_number(stack, i, 100);
+	// 	up_or_down(stack, index_list->move, index_list->ra_rra);
+	// 	check_stack_b(stack, stack_b);
+	// 	if (index_list == NULL)
+	// 		i++;
+	// }
 }
