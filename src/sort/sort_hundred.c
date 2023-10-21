@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 21:18:24 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/19 20:30:48 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/20 17:26:21 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ void		sort_hundred(t_stack **stack, t_stack **stack_b)
 	t_stack	*index_list;
 
 	i = 0;
+	reset_on(stack);
 	while (i <= 5 && is_followed(stack) != 1)
 	{
 		up_down(stack);
@@ -84,5 +85,4 @@ void		sort_hundred(t_stack **stack, t_stack **stack_b)
 		if (index_list == NULL)
 			i++;
 	}
-	// printchunks(stack);
 }

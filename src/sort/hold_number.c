@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 13:30:37 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/20 02:00:22 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/20 20:14:44 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,9 @@ t_stack		*less_move(t_stack **stack, int middle, int chunks)
 	t_stack	*first;
 	int		tmp;
 
-	first = new_stack();
-	while (first->on == 0)
+	first = is_first(stack, chunks);
+	tmp = first_count_move(stack, first);
+	while (first != NULL && first->on == 0)
 	{
 		first = is_first(stack, chunks);
 		tmp = first_count_move(stack, first);
@@ -85,8 +86,11 @@ t_stack  *hold_number(t_stack **stack, int chunks, int len)
 	if (middle % 2 == 0)
 		middle++;
 	first = less_move(stack, middle, chunks);
-	first->ra_rra = 1;
+	if (first == NULL)
+		return (NULL);
 	if (first->move > middle)
 		first->ra_rra = 2;
+	else
+		first->ra_rra = 1;
 	return (first);
 }

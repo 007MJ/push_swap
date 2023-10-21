@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:53:17 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/20 01:49:50 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/20 17:56:00 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	push_swap(t_stack **stack, t_stack **stack_b)
 		sort_five(stack, stack_b);
 	if (lstsize(*stack) == 100)
 		sort_hundred(stack, stack_b);
+
 
 }
 
