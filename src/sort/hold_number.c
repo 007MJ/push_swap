@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 13:30:37 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/21 14:59:21 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/21 17:19:43 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,22 +60,33 @@ void on_see(t_stack **stack)
 t_stack		*less_move(t_stack **stack, int middle, int chunks)
 {
 	t_stack	*first;
+	t_stack	*tmp_list;
 	int		tmp;
 	int		stop;
 
 	stop = 0;
+	tmp_list = new_stack();
+	tmp_list->move = lstsize(*stack);
 	while ( stop != 1)
 	{
 		first = is_first(stack, chunks);
 		tmp = first_count_move(stack, first);
 		if (tmp > middle)
+		{
 			tmp = lstsize(*stack) - tmp;
-		if (first->move > tmp)
-			first->move = tmp;
+			tmp_list->ra_rra = 2;
+		}
+		else
+			tmp_list->ra_rra = 1;
+		if ( tmp_list->move > tmp)
+		{
+			tmp_list = first;
+			tmp_list->move = tmp;
+		}
 		stop = first->on;
 		first->on = 1;
 	}
-	return (first);
+	return (tmp_list);
 }
 
 t_stack  *hold_number(t_stack **stack, int chunks, int len)
@@ -89,9 +100,7 @@ t_stack  *hold_number(t_stack **stack, int chunks, int len)
 	first = less_move(stack, middle, chunks);
 	if (first == NULL)
 		return (NULL);
-	if (first->move > middle)
-		first->ra_rra = 2;
-	else
-		first->ra_rra = 1;
+	if (first != NULL && first->move == 0)
+		first->move = 1;
 	return (first);
 }
