@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 14:50:30 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/20 01:53:46 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/23 04:13:17 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int			lstsize(t_stack *lst);
 
 void		sort_three(t_stack **stack);
 void		sort_five(t_stack **stack, t_stack **stack_b);
-void		sort_hundred(t_stack **stack, t_stack **stack_b);
+t_stack		*sort_hundred(t_stack **stack, t_stack **stack_b, int i);
 t_stack		**put_index(t_stack **stack, int i);
 t_stack		**chunks(t_stack **stack, int nb);
 t_stack		*hold_number(t_stack **stack, int chunks, int len);

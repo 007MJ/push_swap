@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 21:18:24 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/21 14:28:21 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/23 04:13:56 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	up_down(t_stack **stack)
 
 	i = 0;
 	last = search_list(*stack, lstsize(*stack));
-	while (i == 0 && (*stack)->nb > last->nb)
+	while (i == 0 && (*stack)->nb > last->nb && lstsize(*stack) > 0)
 	{
 		if ((*stack)->nb < last->nb)
 			i = 1;
@@ -69,23 +69,20 @@ void	up_down(t_stack **stack)
 // 	}
 // }
 
-void		sort_hundred(t_stack **stack, t_stack **stack_b)
+t_stack		*sort_hundred(t_stack **stack, t_stack **stack_b, int i)
 {
-	int		i;
+	int		len;
 	t_stack	*index_list;
 
-	i = 0;
 	reset_on(stack);
 	index_list = hold_number(stack, i, 100);
-	printf("the return of hold:\nindex_list %d list->on %d list->move %d list->rr_rra %d\n", index_list->nb, index_list->on ,index_list->move, index_list->ra_rra);
+	if (index_list == NULL)
+		return (NULL);
+	printf("number %d and move %d\n", index_list->nb, index_list->move);
+	len =  lstsize(*stack);
+	up_or_down(stack, index_list->move, index_list->ra_rra);
+	// up_down(stack);
+	// check_stack_b(stack, stack_b);
 	(void)stack_b;
-	// while (i <= 5 && is_followed(stack) != 1)
-	// {
-	// 	up_down(stack);
-	// 	index_list = hold_number(stack, i, 100);
-	// 	up_or_down(stack, index_list->move, index_list->ra_rra);
-	// 	check_stack_b(stack, stack_b);
-	// 	if (index_list == NULL)
-	// 		i++;
-	// }
+	return (index_list);
 }

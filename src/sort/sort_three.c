@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 13:37:12 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/25 17:03:35 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/23 00:58:52 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,6 @@ void	sort_three(t_stack **stack)
 	one = search_list(*stack, 1);
 	two = search_list(*stack, 2);
 	three = search_list(*stack, 3);
-	printf("list un -> %d\n", one->nb);
-	printf("list deux -> %d\n", two->nb);
-	printf("list trois -> %d\n", three->nb);
 	if (one->nb > two->nb && two->nb < three->nb && three->nb > one->nb)
 	{
 		swap_a_b(*stack, "sa\n");
@@ -43,5 +40,5 @@ void	sort_three(t_stack **stack)
 		rotate_a(stack, "ra\n");
 	}
 	if (three->nb < two->nb && three->nb < one->nb && two->nb > one->nb)
-		reverse_rotate_a(stack, "ra\n");
+		reverse_rotate_a(stack, "rra\n");
 }

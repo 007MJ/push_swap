@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 21:13:32 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/19 18:01:41 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/23 02:57:28 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ void	up_or_down(t_stack **stack, int move, int up_down)
 		}
 		if (up_down == 2)
 		{
-			while (move <= lstsize(*stack))
+			while (move >= 1)
 			{
 				reverse_rotate_a(stack, "rra\n");
-				move++;
+				move--;
 			}
 		}
 	}

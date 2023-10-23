@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 17:21:18 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/25 18:52:33 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/22 22:37:10 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,15 @@ void	push_a(t_stack **stack_a, t_stack **stack_b)
 		return ;
 	if (*stack_b == NULL)
 	{
-		printf("if : on est la -> %p\n", stack_b);
 		new->nb = (*stack_a)->nb;
 		new->next = NULL;
 		*stack_b = new;
-		printf("if : on est la -> %p\n", stack_b);
 	}
 	else
 	{
 		new->nb = (*stack_a)->nb;
 		new->next = (*stack_b);
 		*stack_b = new;
-		printf(" else:on est la -> %d\n", (*stack_b)->nb);
 	}
 	delete_first(stack_a);
 }
