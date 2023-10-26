@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_b.c                                           :+:      :+:    :+:   */
+/*   is_bigger.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 17:21:18 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/24 19:25:28 by mnshimiy         ###   ########.fr       */
+/*   Created: 2023/10/25 18:43:34 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/10/25 19:03:55 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	push_b(t_stack **stack_a, t_stack **stack_b)
+int is_bigger(t_stack *stack, t_stack **stack_b)
 {
-	ft_putstr("pb\n");
-	t_stack *new;
+	int		i;
+	t_stack	*current;
 
-	new = malloc(sizeof(t_stack));
-	if(!new)
-		return ;
-	if (*stack_a == NULL)
-		return ;
-	if (*stack_b == NULL)
+	current = *stack_b;
+	i = 1;
+	while (current != NULL)
 	{
-		new->nb = (*stack_a)->nb;
-		new->next = NULL;
-		*stack_b = new;
+		if (stack->nb > current->nb)
+			i++;
+		current = current->next;
 	}
-	else
-	{
-		new->nb = (*stack_a)->nb;
-		new->next = (*stack_b);
-		*stack_b = new;
-	}
-	delete_first(stack_a);
+	if (i == lstsize(*stack_b))
+		return (i);
+	return (0);
 }

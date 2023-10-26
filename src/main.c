@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:53:17 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/23 04:16:51 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/26 17:53:42 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,24 +50,21 @@ void let_see(t_stack **stack)
 void	push_swap(t_stack **stack, t_stack **stack_b)
 {
 	int	i;
+	int	len;
 
 	i = 0;
-	// len = lstsize(*stack);
+	t_stack *s;
+
+	s = NULL;
+	len = lstsize(*stack);
 	put_index(stack, 5);
 	reset_on(stack);
 	if(lstsize(*stack) == 3)
 		sort_three(stack);
 	if (lstsize(*stack) == 5)
 		sort_five(stack, stack_b);
-	// if (lstsize(*stack) == 100)
-	// {
-	// 	while (i != 5)
-	// 	{
-			if (sort_hundred(stack, stack_b, i) == NULL)
-				i++;
-			
-	// 	}
-	// }
+	if (lstsize(*stack) == 100)
+		 sort_hundred(stack, stack_b, 5);
 
 
 }

@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 21:18:24 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/23 20:00:27 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/26 18:16:35 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,18 +71,18 @@ void	up_down(t_stack **stack)
 
 t_stack		*sort_hundred(t_stack **stack, t_stack **stack_b, int i)
 {
-	int		len;
+	// int		len;
 	t_stack	*index_list;
 
 	reset_on(stack);
 	index_list = hold_number(stack, i, 100);
-	if (index_list == NULL)
-		return (NULL);
-	printf("number %d and move %d\n", index_list->nb, index_list->move);
-	len =  lstsize(*stack);
+	(void)stack_b;
+	// if (index_list == NULL)
+	// 	return (NULL);
+	// len =  lstsize(*stack);
 	up_or_down(stack, index_list->move, index_list->ra_rra);
 	// up_down(stack);
 	check_stack_b(stack, stack_b);
-	(void)stack_b;
 	return (index_list);
+
 }

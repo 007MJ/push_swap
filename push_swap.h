@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 14:50:30 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/23 04:13:17 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/25 18:47:17 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,5 @@ int			first_count_move(t_stack **stack, t_stack *list);
 int			second_count_move(t_stack **stack, t_stack *list);
 int			is_followed(t_stack **stack);
 void		reset_on(t_stack **stack);
+int			is_bigger(t_stack *stack, t_stack **stack_b);
 # endif

@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_b.c                                           :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 17:21:18 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/24 19:25:28 by mnshimiy         ###   ########.fr       */
+/*   Created: 2023/10/26 18:08:44 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/10/26 18:13:27 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
 
-void	push_b(t_stack **stack_a, t_stack **stack_b)
+
+typedef struct s_stack
 {
-	ft_putstr("pb\n");
-	t_stack *new;
+	int				nb;
+	int				index;
+	int				chunks;
+	int				on;
+	int				move;
+	int				ra_rra;
+	struct	s_stack	*next;
+}	t_stack;
 
-	new = malloc(sizeof(t_stack));
-	if(!new)
-		return ;
-	if (*stack_a == NULL)
-		return ;
-	if (*stack_b == NULL)
-	{
-		new->nb = (*stack_a)->nb;
-		new->next = NULL;
-		*stack_b = new;
-	}
-	else
-	{
-		new->nb = (*stack_a)->nb;
-		new->next = (*stack_b);
-		*stack_b = new;
-	}
-	delete_first(stack_a);
-}
+
+
+# endif
