@@ -49,14 +49,10 @@ void let_see(t_stack **stack)
 
 void	push_swap(t_stack **stack, t_stack **stack_b)
 {
-	int	i;
-	int	len;
+
+	int i;
 
 	i = 0;
-	t_stack *s;
-
-	s = NULL;
-	len = lstsize(*stack);
 	put_index(stack, 5);
 	reset_on(stack);
 	if(lstsize(*stack) == 3)
@@ -64,9 +60,14 @@ void	push_swap(t_stack **stack, t_stack **stack_b)
 	if (lstsize(*stack) == 5)
 		sort_five(stack, stack_b);
 	if (lstsize(*stack) == 100)
-		 sort_hundred(stack, stack_b, 5);
+	{
 
-
+		while (i <= 19)
+		{
+			sort_hundred(stack, stack_b, 0);
+			i++;
+		}
+	}
 }
 
 
@@ -76,11 +77,12 @@ int	main (int argc, char *argv[])
 	t_stack	*stack_b;
 
 	stack_b = NULL;
+	// trouve une facon de travailler directement avec la liste retourne car les index ne function pas partout |!!!!!!!!!
 	stack = argc_bigger_two(argv, argc);
 	push_swap(&stack, &stack_b);
 	// printindex(stack);
 	// printf("stack A : \n");
 	// printlst(&stack);
-	// printf("stack B : \n");
-	// printlst(&stack_b);
+	printf("stack B : \n");
+	printlst(&stack_b);
 }

@@ -76,13 +76,13 @@ t_stack		*sort_hundred(t_stack **stack, t_stack **stack_b, int i)
 
 	reset_on(stack);
 	index_list = hold_number(stack, i, 100);
-	(void)stack_b;
 	// if (index_list == NULL)
 	// 	return (NULL);
 	// len =  lstsize(*stack);
 	up_or_down(stack, index_list->move, index_list->ra_rra);
 	// up_down(stack);
 	check_stack_b(stack, stack_b);
+	// trouve une facon de travailler directement avec la liste retourne car les index ne function pas partout ;
 	return (index_list);
 
 }

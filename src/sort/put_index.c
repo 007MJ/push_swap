@@ -71,13 +71,13 @@ void	ticket_list(t_stack **stack, int i)
 
 t_stack	**put_index(t_stack **stack, int i)
 {
-	t_stack	*current;
+	// t_stack	*current;
 	int		index;
 	int		size;
 
 	size = lstsize(*stack);
 	index = 0;
-	current = *stack;
+	// current = *stack;
 	while (index <= size)
 	{
 		ticket_list(stack, index);

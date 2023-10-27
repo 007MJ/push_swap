@@ -15,17 +15,17 @@
 int	fund_chunks(t_stack **stack, int chunk)
 {
 	t_stack *current;
-	int		i;
+	// int		i;
 	int		y;
 
-	i = 1;
+	// i = 1;
 	y = 0;
 	current = *stack;
 	while (current != NULL)
 	{
 		if (current->chunks == chunk)
 			y++;
-		i++;
+		// i++;
 		current = current->next;
 	}
 	return (y);

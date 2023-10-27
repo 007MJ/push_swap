@@ -15,10 +15,10 @@
 int	parsing_check(char **argv)
 {
 	int	i;
-	int	y;
+	// int	y;
 
 	i = 1;
-	y = 0;
+	// y = 0;
 	while (argv[i] != NULL)
 	{
 		if (not_numbe(argv[i]) == -1)
