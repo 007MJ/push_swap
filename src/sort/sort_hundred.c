@@ -57,32 +57,24 @@ void	up_down(t_stack **stack)
 	}
 }
 
-// void let_see(t_stack **stack)
-// {
-// 	t_stack *current;
+void let_s(t_stack **stack)
+{
+	t_stack *current;
 
-// 	current = *stack;
-// 	while (current != NULL)
-// 	{
-// 		printf("index-number-> %d and chunks->%d\n", current->index, current->chunks);
-// 		current = current->next;
-// 	}
-// }
+	current = *stack;
+	while (current != NULL)
+	{
+		printf("index-number-> %d and chunks->%d\n", current->index, current->chunks);
+		current = current->next;
+	}
+}
 
 t_stack		*sort_hundred(t_stack **stack, t_stack **stack_b, int i)
 {
-	// int		len;
 	t_stack	*index_list;
-
 	reset_on(stack);
 	index_list = hold_number(stack, i, 100);
-	// if (index_list == NULL)
-	// 	return (NULL);
-	// len =  lstsize(*stack);
-	up_or_down(stack, index_list->move, index_list->ra_rra);
-	// up_down(stack);
-	check_stack_b(stack, stack_b);
-	// trouve une facon de travailler directement avec la liste retourne car les index ne function pas partout ;
+	up_or_down(stack, index_list);
+	check_stack_b(stack, stack_b, index_list);
 	return (index_list);
-
 }

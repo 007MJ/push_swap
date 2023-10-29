@@ -59,10 +59,14 @@
 // 	}
 // }
 
-void	check_stack_b(t_stack **stack, t_stack **stack_b)
+void	check_stack_b(t_stack **stack, t_stack **stack_b, t_stack *list)
 {
+		if (stack != NULL)
+			printf("the number we are going to push %d\n", (*stack)->nb);
+		// if (list->nb !=  (*stack)->nb)
+		// 	printf("note the same number");
 		push_b(stack, stack_b);
-		printf("number -> %d and chunks ->%d and index %d\n", (*stack_b)->nb, (*stack_b)->chunks, (*stack)->index);
+		(void)list;
 		// trouve une facon de travailler directement avec la liste retourne car les index ne function pas partout ;
 }
 

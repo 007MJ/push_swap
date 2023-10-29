@@ -12,24 +12,24 @@
 
 #include "../../push_swap.h"
 
-void	up_or_down(t_stack **stack, int move, int up_down)
+void	up_or_down(t_stack **stack, t_stack *list)
 {
-	if (stack != NULL)
+	if (stack != NULL && list != NULL && lstsize(*stack) > 2)
 	{
-		if (up_down == 1)
+		if (list->ra_rra == 1)
 		{
-			while (move >= 1)
+			while (list->move >= 0)
 			{
 				rotate_a(stack, "ra\n");
-				move--;
+				list->move--;
 			}
 		}
-		if (up_down == 2)
+		if (list->ra_rra == 2)
 		{
-			while (move >= 1)
+			while (list->move >= 0)
 			{
 				reverse_rotate_a(stack, "rra\n");
-				move--;
+				list->move--;
 			}
 		}
 	}
