@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 14:50:30 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/25 18:47:17 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/30 19:20:39 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ t_stack		*hold_number(t_stack **stack, int chunks, int len);
 t_stack		*is_first(t_stack **stack, int chunk);
 void		up_or_down(t_stack **stack, t_stack *list);
 int			fund_chunks(t_stack **stack, int chunk);
-void		check_stack_b(t_stack **stack, t_stack **stack_b, t_stack *list);
+void		check_stack_b(t_stack **stack, t_stack **stack_b, t_stack *list, int lenstack_b);
 int			first_count_move(t_stack **stack, t_stack *list);
 int			second_count_move(t_stack **stack, t_stack *list);
 int			is_followed(t_stack **stack);

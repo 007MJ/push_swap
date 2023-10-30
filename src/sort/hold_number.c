@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 13:30:37 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/29 20:24:29 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/30 17:36:14 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,5 @@ t_stack  *hold_number(t_stack **stack, int chunks, int len)
 		return (NULL);
 	if (first != NULL && first->move == 0)
 		first->move = 1;
-	printf("small number -> %d and move %d and up_down %d \n", first->nb, first->move, first->ra_rra);
 	return (first);
 }
