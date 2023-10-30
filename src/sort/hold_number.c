@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 13:30:37 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/26 18:15:50 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/29 20:24:29 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,14 @@ t_stack		*less_move(t_stack **stack, int middle, int chunks)
 		if (first == NULL)
 			return (first);
 		tmp = first_count_move(stack, first);
+		if (first->nb == 10)
+			printf("pour le number of %d\n", tmp);
 		if (tmp > middle)
 		{
-			tmp = lstsize(*stack) - tmp;
+			if (tmp == lstsize (*stack) - 1)
+				tmp = lstsize(*stack) - tmp + 1;
+			else
+				tmp = lstsize(*stack) - tmp;
 			tmp_list->ra_rra = 2;
 		}
 		else
@@ -73,5 +78,6 @@ t_stack  *hold_number(t_stack **stack, int chunks, int len)
 		return (NULL);
 	if (first != NULL && first->move == 0)
 		first->move = 1;
+	printf("small number -> %d and move %d and up_down %d \n", first->nb, first->move, first->ra_rra);
 	return (first);
 }

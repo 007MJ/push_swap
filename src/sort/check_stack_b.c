@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:42:31 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/26 18:15:53 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/29 19:15:28 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,26 @@
 // 		}
 // 	}
 // }
+void beforepush(t_stack ** stack)
+{
+	printf("--before we push--\n");
+	t_stack  *curr;
+
+	curr = *stack;
+	if (curr != NULL)
+	{
+		for (int i = 0; i < 1; i++)
+		{
+			printf("number push %d\n", curr->nb);
+			curr = curr->next;
+		}
+	}
+	printf("--before we push end --\n");
+}
 
 void	check_stack_b(t_stack **stack, t_stack **stack_b, t_stack *list)
 {
-		if (stack != NULL)
-			printf("the number we are going to push %d\n", (*stack)->nb);
-		// if (list->nb !=  (*stack)->nb)
-		// 	printf("note the same number");
+		// beforepush(stack);
 		push_b(stack, stack_b);
 		(void)list;
 		// trouve une facon de travailler directement avec la liste retourne car les index ne function pas partout ;

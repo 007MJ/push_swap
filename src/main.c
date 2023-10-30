@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:53:17 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/26 17:53:42 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/29 20:13:01 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,21 @@ void	push_swap(t_stack **stack, t_stack **stack_b)
 		}
 	}
 }
+void	see_list_afert_push(t_stack **stack)
+{
+	printf("--still in stack a ---\n");
+	t_stack *cur;
 
+	cur = *stack;
+	if (stack == NULL || lstsize(*stack) < 3)
+		return ;
+	for (int i = 0; i < 3; i++)
+	{
+		printf("%d\n", cur->nb);
+		cur = cur->next;
+	}
+	printf("--still in stack a end ---\n");
+}
 void	push_hundred(t_stack **stack, t_stack **stack_b)
 {
 	t_stack	*list;
@@ -83,15 +97,13 @@ void	push_hundred(t_stack **stack, t_stack **stack_b)
 		reset_on(stack);
 		list = hold_number(stack, i, 100);
 		// if (list != NULL)
-		// 	printf("small number %d and number of move %d and index %d\n", list->nb, list->move, list->index);
+		// 	printf("small number %d and number of move %d and ra_rra %d\n", list->nb, list->move, list->ra_rra);
 		up_or_down(stack, list);
-		if (list != NULL)
-			if (list->chunks == i)
-				printf("--number %d in chunks %d\n", list->nb, list->chunks);
 		check_stack_b(stack, stack_b, list);
 		if (list == NULL)
 			i++;
-		
+		// see_list_afert_push(stack);
+
 	}
 	(void)stack_b;
 }
@@ -104,13 +116,13 @@ int	main (int argc, char *argv[])
 
 	stack_b = NULL;
 
-	// trouve une facon de travailler directement avec la liste retourne car les index ne function pas partout 
+	// trouve une facon de travailler directement avec la liste retourne car les index ne function pas partout
 	stack = argc_bigger_two(argv, argc);
 	// push_swap(&stack, &stack_b);
 	push_hundred(&stack, &stack_b);
 	// printindex(stack);
-	printf("stack A : \n");
-	printlst(&stack);
-	printf("stack B : \n");
-	printlst(&stack_b);
+// 	printf("stack A : \n");
+// 	printlst(&stack);
+// 	printf("stack B : \n");
+// 	printlst(&stack_b);
 }
