@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 21:18:24 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/26 18:16:35 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/31 21:16:00 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,6 @@ t_stack		*sort_hundred(t_stack **stack, t_stack **stack_b, int i)
 	reset_on(stack);
 	index_list = hold_number(stack, i, 100);
 	up_or_down(stack, index_list);
-	check_stack_b(stack, stack_b, index_list);
+	check_stack_b(stack, stack_b, index_list, i);
 	return (index_list);
 }

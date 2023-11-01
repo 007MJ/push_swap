@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 13:30:37 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/30 17:36:14 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/10/31 21:50:38 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ t_stack		*less_move(t_stack **stack, int middle, int chunks)
 		if (first == NULL)
 			return (first);
 		tmp = first_count_move(stack, first);
-		if (first->nb == 10)
-			printf("pour le number of %d\n", tmp);
 		if (tmp > middle)
 		{
 			if (tmp == lstsize (*stack) - 1)
