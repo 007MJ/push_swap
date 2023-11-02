@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:53:17 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/31 21:49:51 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/02 03:24:11 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void	push_swap(t_stack **stack, t_stack **stack_b)
 		}
 	}
 }
+
 void	see_list_afert_push(t_stack **stack)
 {
 	printf("--still in stack a ---\n");
@@ -101,7 +102,7 @@ void	push_hundred(t_stack **stack, t_stack **stack_b)
 		list = hold_number(stack, i, 100);
 		// if (list != NULL)
 		// 	printf("small number %d and number of move %d and ra_rra %d\n", list->nb, list->move, list->ra_rra);
-		up_or_down(stack, list);
+		// up_or_down(stack, list);
 		check_stack_b(stack, stack_b, list, lenstack_a);
 		if (list == NULL)
 			i++;

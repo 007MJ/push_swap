@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:42:31 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/02 01:23:27 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/02 03:10:02 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,13 +103,26 @@ int	search_for_closer(int number, int smaller, int middle, int big)
 	int	mdd;
 	int	sml;
 
-	bgg = number - big;
+	bgg = big - number;
+	if (bgg < 0)
+		bgg *=-1;
 	mdd = number - middle;
+	if (mdd < 0)
+		mdd *=-1;
 	sml = number - smaller;
-	if (bgg < mdd && bgg < sml && bgg > -1)
+	if (sml < 0)
+		sml *=-1;
+	printf("big %d, middle %d, smaller %d\n", big, middle, smaller);
+	printf("big %d and mdd %d sml %d the number %d\n", bgg, mdd, sml, number);
+	if (bgg < mdd && bgg < sml)
+	{
 		return (3);
+	}
 	else if (mdd < bgg && mdd < sml)
+	{
+		printf("2\n");
 		return (2);
+	}
 	else
 		return (1);
 }
@@ -124,6 +137,7 @@ void	check_stack_b(t_stack **stack, t_stack **stack_b, t_stack *list, int lensta
 	middle = NULL;
 	smaller = NULL;
 	(void)lenstack_a;
+	// (void)list;
 	if (stack_b == NULL || lstsize(*stack_b) < 4)
 		push_b(stack, stack_b);
 	else
@@ -131,6 +145,6 @@ void	check_stack_b(t_stack **stack, t_stack **stack_b, t_stack *list, int lensta
 		smaller = which_place(stack_b, 1);
 		middle = which_place(stack_b, 2);
 		big = which_place(stack_b, 3);
-		search_for_closer(list->nb, smaller->nb, middle->nb, big->nb);
+		printf("is closer to %d \n", search_for_closer(list->nb, smaller->nb, middle->nb, big->nb));
 	}
 }
