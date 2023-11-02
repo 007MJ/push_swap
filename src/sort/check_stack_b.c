@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:42:31 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/02 03:10:02 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/02 04:10:35 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,7 +138,7 @@ void	check_stack_b(t_stack **stack, t_stack **stack_b, t_stack *list, int lensta
 	smaller = NULL;
 	(void)lenstack_a;
 	// (void)list;
-	if (stack_b == NULL || lstsize(*stack_b) < 4)
+	if (stack_b == NULL || lstsize(*stack_b) < 3)
 		push_b(stack, stack_b);
 	else
 	{

@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:43:34 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/02 01:24:19 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/02 04:12:17 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,11 +88,13 @@ int	middle(t_stack **stack_b)
 	middle = middle / divide;
 	if (middle % 2 != 0)
 		middle++;
+	printf("middle %d\n", middle);
 	return (is_closer_middle(middle, stack_b));
 }
 
-int	one (t_stack **stack)
+int	smaller(t_stack **stack)
 {
+	printf("-----\n");
 	int	tmp;
 	int	i;
 	t_stack	*curr;
@@ -114,6 +116,7 @@ int	one (t_stack **stack)
 		curr = curr->next;
 		i++;
 	}
+	printf("---In the function ONE smaller %d\n", tmp);
 	return (-1);
 }
 
@@ -124,6 +127,6 @@ int which_number(t_stack **stack_b, int i)
 	else if (i == 2)
 		return (middle(stack_b));
 	else if (i == 1)
-		return (one(stack_b));
+		return (smaller(stack_b));
 	return (-1);
 }
