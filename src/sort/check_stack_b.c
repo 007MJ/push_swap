@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:42:31 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/02 04:10:35 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/02 20:54:04 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,29 +59,6 @@
 // 	}
 // }
 
-// void beforepush(t_stack ** stack)
-// {
-// 	printf("--before we push--\n");
-// 	t_stack  *curr;
-
-// 	curr = *stack;
-// 	if (curr != NULL)
-// 	{
-// 		for (int i = 0; i < 1; i++)
-// 		{
-// 			printf("number push %d\n", curr->nb);
-// 			curr = curr->next;
-// 		}
-// 	}
-// 	printf("--before we push end --\n");
-// }
-
-// void	check_stack_b(t_stack **stack, t_stack **stack_b, t_stack *list)
-// {
-// 		push_b(stack, stack_b);
-// 		(void)list;
-// 		// trouve une facon de travailler directement avec la liste retourne car les index ne function pas partout ;
-// }
 
 t_stack	*which_place(t_stack **stack_b, int i)
 {
@@ -112,17 +89,10 @@ int	search_for_closer(int number, int smaller, int middle, int big)
 	sml = number - smaller;
 	if (sml < 0)
 		sml *=-1;
-	printf("big %d, middle %d, smaller %d\n", big, middle, smaller);
-	printf("big %d and mdd %d sml %d the number %d\n", bgg, mdd, sml, number);
 	if (bgg < mdd && bgg < sml)
-	{
 		return (3);
-	}
 	else if (mdd < bgg && mdd < sml)
-	{
-		printf("2\n");
 		return (2);
-	}
 	else
 		return (1);
 }
@@ -137,7 +107,7 @@ void	check_stack_b(t_stack **stack, t_stack **stack_b, t_stack *list, int lensta
 	middle = NULL;
 	smaller = NULL;
 	(void)lenstack_a;
-	// (void)list;
+	(void)list;
 	if (stack_b == NULL || lstsize(*stack_b) < 3)
 		push_b(stack, stack_b);
 	else
@@ -145,6 +115,8 @@ void	check_stack_b(t_stack **stack, t_stack **stack_b, t_stack *list, int lensta
 		smaller = which_place(stack_b, 1);
 		middle = which_place(stack_b, 2);
 		big = which_place(stack_b, 3);
-		printf("is closer to %d \n", search_for_closer(list->nb, smaller->nb, middle->nb, big->nb));
+		// printf("is closer to %d \n", search_for_closer(list->nb, smaller->nb, middle->nb, big->nb));
+		// printf("big %d and middle %d and smaller %d \n", big->nb, middle->nb, smaller->nb);
+		printlst(stack_b);
 	}
 }

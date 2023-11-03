@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:43:34 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/02 04:12:17 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/02 20:55:32 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,9 @@ int	is_closer_middle(int middle , t_stack **stack)
 	while (curr != NULL)
 	{
 		nb = middle - curr->nb;
-		if (tmp > nb && nb > -1)
+		if (nb < 0)
+			nb *= -1;
+		if (tmp > nb)
 		{
 			tmp = nb;
 			list = curr;
@@ -76,8 +78,8 @@ int	middle(t_stack **stack_b)
 	int		middle;
 	int		divide;
 
-	divide = 1;
-	middle = 1;
+	divide = 0;
+	middle = 0;
 	curr = *stack_b;
 	while (curr != NULL)
 	{
@@ -88,13 +90,11 @@ int	middle(t_stack **stack_b)
 	middle = middle / divide;
 	if (middle % 2 != 0)
 		middle++;
-	printf("middle %d\n", middle);
 	return (is_closer_middle(middle, stack_b));
 }
 
 int	smaller(t_stack **stack)
 {
-	printf("-----\n");
 	int	tmp;
 	int	i;
 	t_stack	*curr;
@@ -116,7 +116,6 @@ int	smaller(t_stack **stack)
 		curr = curr->next;
 		i++;
 	}
-	printf("---In the function ONE smaller %d\n", tmp);
 	return (-1);
 }
 
