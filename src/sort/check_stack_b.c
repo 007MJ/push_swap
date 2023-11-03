@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:42:31 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/02 20:54:04 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/02 22:26:42 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,8 +115,11 @@ void	check_stack_b(t_stack **stack, t_stack **stack_b, t_stack *list, int lensta
 		smaller = which_place(stack_b, 1);
 		middle = which_place(stack_b, 2);
 		big = which_place(stack_b, 3);
-		// printf("is closer to %d \n", search_for_closer(list->nb, smaller->nb, middle->nb, big->nb));
-		// printf("big %d and middle %d and smaller %d \n", big->nb, middle->nb, smaller->nb);
-		printlst(stack_b);
+		if (search_for_closer((*stack)->nb, smaller->nb, middle->nb, big->nb) == 1)
+			place_number(smaller, stack, stack_b);
+		if (search_for_closer((*stack)->nb, smaller->nb, middle->nb, big->nb) == 2)
+			place_number(middle, stack, stack_b);
+		if (search_for_closer((*stack)->nb, smaller->nb, middle->nb, big->nb) == 3)
+			place_number(big, stack, stack_b);
 	}
 }

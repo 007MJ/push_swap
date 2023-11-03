@@ -6,10 +6,14 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:06:36 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/02 21:06:56 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/02 22:31:24 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
 
+void	place_number(t_stack **place, t_stack **stack, t_stack **stack_b)
+{
+
+}
