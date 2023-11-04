@@ -6,7 +6,7 @@
 #    By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/15 18:06:53 by mnshimiy          #+#    #+#              #
-#    Updated: 2023/11/02 22:29:36 by mnshimiy         ###   ########.fr        #
+#    Updated: 2023/11/04 14:06:03 by mnshimiy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRCS    = src/main.c  src/parsing/is_alpha.c src/parsing/is_number.c src/parsing
 		src/list/delete_list.c  src/list/search_list.c src/list/rotate_a.c src/list/reverse_rotate_a.c src/list/rr.c\
 		src/sort/sort_three.c src/sort/sort_five.c src/sort/sort_hundred.c src/sort/put_index.c src/sort/chunks.c src/sort/hold_number.c\
 		src/sort/is_first.c src/sort/fund_chunks.c src/sort/check_stack_b.c src/sort/first_count_move.c src/sort/second_count_move.c src/sort/is_followed.c\
-		src/sort/up_or_down.c src/list/reset_on.c  src/sort/which_number.c src/sort/place_number.c
+		src/sort/up_or_down.c src/list/reset_on.c  src/sort/which_number.c src/sort/place_number.c src/sort/put_ontop.c
 
 OBJS = $(SRCS:.c=.o)
 

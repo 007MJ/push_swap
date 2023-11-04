@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:53:17 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/04 00:01:13 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/04 15:59:18 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ void	push_hundred(t_stack **stack, t_stack **stack_b)
 	i = 0;
 	lenstack_a = lstsize(*stack);
 	put_index(stack, 5);
-	let_see(stack);
+	// let_see(stack);
 	reset_on(stack);
 	while (i < 5)
 	{
@@ -106,8 +106,6 @@ void	push_hundred(t_stack **stack, t_stack **stack_b)
 		check_stack_b(stack, stack_b, list, lenstack_a);
 		if (list == NULL)
 			i++;
-		// see_list_afert_push(stack);
-
 	}
 	(void)stack_b;
 }
@@ -127,7 +125,7 @@ int	main (int argc, char *argv[])
 	// printindex(stack);
 	// printf("stack A : \n");
 	// printlst(&stack);
-	// printf("stack B : \n");
-	// printlst(&stack_b);
+	printf("stack B : \n");
+	printlst(&stack_b);
 	// printf("size of stack b %d\n", lstsize(stack_b));
 }

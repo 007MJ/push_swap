@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 14:50:30 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/03 23:39:30 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/04 14:07:01 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,6 @@ int			is_followed(t_stack **stack);
 void		reset_on(t_stack **stack);
 int			which_number(t_stack **stack, int i);
 void		place_number(t_stack *place, t_stack **stack, t_stack **stack_b);
+void		put_ontop(int place_of_nb, t_stack **stack);
+
 # endif

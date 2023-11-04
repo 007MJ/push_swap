@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printlst.c                                         :+:      :+:    :+:   */
+/*   put_ontop.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 17:09:44 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/04 15:59:55 by mnshimiy         ###   ########.fr       */
+/*   Created: 2023/11/04 14:02:53 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/11/04 15:47:01 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	printlst(t_stack	**stack)
+void	put_ontop(int place_of_nb, t_stack **stack_b)
 {
-	t_stack *current;
+	int	i;
 
-	current = *stack;
-	while (current != NULL)
+	i = 1;
+	if (stack_b == NULL)
+		return ;
+	while (i <= place_of_nb)
 	{
-		printf("%d\n", current->nb);
-		current = current->next;
+		reverse_rotate_a(stack_b, "rb\n");
+		i++;
 	}
 }
