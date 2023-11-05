@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:53:17 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/04 20:47:39 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/04 22:54:44 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,31 +85,50 @@ void	see_list_afert_push(t_stack **stack)
 	printf("--still in stack a end ---\n");
 }
 
-void	push_hundred(t_stack **stack, t_stack **stack_b)
-{
-	t_stack	*list;
-	int		lenstack_a;
-	int		i;
+// void	push_hundred(t_stack **stack, t_stack **stack_b)
+// {
+	// t_stack	*list;
+	// int		lenstack_a;
+	// int		i;
 
-	i = 0;
-	lenstack_a = lstsize(*stack);
-	put_index(stack, 5);
+	// i = 0;
+	// lenstack_a = lstsize(*stack);
+	// put_index(stack, 5);
 	// let_see(stack);
-	reset_on(stack);
-	while (i < 5)
-	{
-		reset_on(stack);
-		list = hold_number(stack, i, 100);
+	// reset_on(stack);
+	// while (i < 5)
+	// {
+		// reset_on(stack);
+		// list = hold_number(stack, i, 100);
 		// if (list != NULL)
 		// 	printf("small number %d and number of move %d and ra_rra %d\n", list->nb, list->move, list->ra_rra);
 		// up_or_down(stack, list);
-		check_stack_b(stack, stack_b, list, lenstack_a);
-		if (list == NULL)
-			i++;
-	}
-	move_on_stack_a(stack, stack_b);
-}
+		// check_stack_b(stack, stack_b, list, lenstack_a);
+		// if (list == NULL)
+			// i++;
+	// }
+	// move_on_stack_a(stack, stack_b);
+// }
 
+void	push_hundred(t_stack **stack, t_stack **stack_b)
+{
+	int	len;
+	int	len_b;
+
+	len = lstsize(*stack);
+	while (len > 4)
+	{
+		len = lstsize(*stack);
+		push_b(stack, stack_b);
+	}
+	sort_three(stack);
+	len_b = lstsize(*stack_b);
+	while (len_b > 0)
+	{
+		len_b = lstsize(*stack_b);
+		check_stack_a(stack, stack_b);
+	}
+}
 
 int	main (int argc, char *argv[])
 {

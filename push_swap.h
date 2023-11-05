@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 14:50:30 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/04 19:26:46 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/05 00:04:11 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ t_stack		*hold_number(t_stack **stack, int chunks, int len);
 t_stack		*is_first(t_stack **stack, int chunk);
 void		up_or_down(t_stack **stack, t_stack *list);
 int			fund_chunks(t_stack **stack, int chunk);
-void		check_stack_b(t_stack **stack, t_stack **stack_b, t_stack *list, int lenstack_b);
+// void		check_stack_b(t_stack **stack, t_stack **stack_b, t_stack *list, int lenstack_b);
 int			first_count_move(t_stack **stack, t_stack *list);
 int			second_count_move(t_stack **stack, t_stack *list);
 int			is_followed(t_stack **stack);
@@ -79,5 +79,7 @@ int			which_number(t_stack **stack, int i);
 void		place_number(t_stack *place, t_stack **stack, t_stack **stack_b);
 void		put_ontop(int place_of_nb, t_stack **stack);
 void		move_on_stack_a(t_stack **stack, t_stack **stack_b);
+void		check_stack_a(t_stack **stack, t_stack **stack_b);
+void		go_place_number(t_stack **next_b, t_stack **stack);
 
 # endif

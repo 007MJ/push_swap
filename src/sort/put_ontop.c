@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 14:02:53 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/04 15:47:01 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/04 22:08:17 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	put_ontop(int place_of_nb, t_stack **stack_b)
 		return ;
 	while (i <= place_of_nb)
 	{
-		reverse_rotate_a(stack_b, "rb\n");
+		reverse_rotate_a(stack_b, "ra\n");
 		i++;
 	}
 }
