@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:53:17 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/04 22:54:44 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:53:59 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,8 @@ void	push_hundred(t_stack **stack, t_stack **stack_b)
 	while (len_b > 0)
 	{
 		len_b = lstsize(*stack_b);
-		check_stack_a(stack, stack_b);
+		// check_stack_a(stack, stack_b);
+		go_place_number(stack_b, stack);
 	}
 }
 

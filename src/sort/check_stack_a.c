@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 21:46:54 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/05 01:03:10 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:46:46 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,7 @@ void	check_stack_a(t_stack **stack, t_stack **stack_b)
 	// 	if (search_for_closer((*stack_b)->nb, smaller->nb, middle->nb, big->nb) == 1)
 	// 		place_number(smaller, stack_b, stack);
 	// }
-	go_place_number(stack_b, stack);
+	if (stack_b == NULL || lstsize(*stack_b) < 3)
+		push_b(stack_b, stack);
+	// go_place_number(stack_b, stack);
 }
