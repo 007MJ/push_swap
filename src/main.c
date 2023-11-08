@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:53:17 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/06 20:53:59 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/07 20:51:39 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,18 +116,23 @@ void	push_hundred(t_stack **stack, t_stack **stack_b)
 	int	len_b;
 
 	len = lstsize(*stack);
-	while (len > 4)
+	while (len > 3)
 	{
-		len = lstsize(*stack);
 		push_b(stack, stack_b);
+		len = lstsize(*stack);
 	}
+	// printf("stack -> \n");
+	// printlst(stack);
 	sort_three(stack);
 	len_b = lstsize(*stack_b);
-	while (len_b > 0)
+	// printf("len of b %d \n", len_b);
+	// printf("len of a %d \n", len);
+	while (len_b > 1)
 	{
 		len_b = lstsize(*stack_b);
 		// check_stack_a(stack, stack_b);
-		go_place_number(stack_b, stack);
+		// printf("len of stack -> b %d\n", len_b);
+		go_place_number(stack, stack_b);
 	}
 }
 
@@ -143,8 +148,8 @@ int	main (int argc, char *argv[])
 	// push_swap(&stack, &stack_b);
 	push_hundred(&stack, &stack_b);
 	// printindex(stack);
-	printf("stack A : \n");
-	printlst(&stack);
+	// printf("stack A : \n");
+	// printlst(&stack);
 	// printf("stack B : \n");
 	// printlst(&stack_b);
 	// printf("size of stack b %d\n", lstsize(stack_b));
