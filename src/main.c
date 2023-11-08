@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:53:17 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/07 20:51:39 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/07 20:59:59 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,17 +121,12 @@ void	push_hundred(t_stack **stack, t_stack **stack_b)
 		push_b(stack, stack_b);
 		len = lstsize(*stack);
 	}
-	// printf("stack -> \n");
-	// printlst(stack);
 	sort_three(stack);
 	len_b = lstsize(*stack_b);
-	// printf("len of b %d \n", len_b);
-	// printf("len of a %d \n", len);
 	while (len_b > 1)
 	{
 		len_b = lstsize(*stack_b);
 		// check_stack_a(stack, stack_b);
-		// printf("len of stack -> b %d\n", len_b);
 		go_place_number(stack, stack_b);
 	}
 }

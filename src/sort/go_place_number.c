@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 23:20:36 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/07 20:51:29 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/07 21:09:59 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	make_move(int position, t_stack **next_b, t_stack **stack)
 
 	i = 1;
 	position = lstsize(*stack) - position;
-	while (position >= i)
+	while (position > i)
 	{
 		// Le dernier élément devient le premier.
 		reverse_rotate_a(stack, "rra\n");
@@ -120,7 +120,5 @@ void	place(t_stack **next_b, t_stack **stack, int len_stack_a)
 
 void	go_place_number(t_stack **stack, t_stack **stack_b)
 {
-	// printf("len of b go-function %d \n", lstsize(*stack_b));
-	// printf("len of a go-function %d \n", lstsize(*stack));
 	place(stack_b, stack, lstsize(*stack));
 }
