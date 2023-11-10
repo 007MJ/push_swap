@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 21:18:24 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/20 01:42:24 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/10 02:17:06 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	small_list(t_stack **stack)
 {
-	t_stack *current;
+	t_stack	*current;
 	int		tmp;
 
 	current = *stack;
@@ -74,6 +74,7 @@ t_stack	**put_index(t_stack **stack, int i)
 	// t_stack	*current;
 	int		index;
 	int		size;
+	(void)i;
 
 	size = lstsize(*stack);
 	index = 0;

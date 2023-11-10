@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:42:31 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/04 22:13:13 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/10 03:03:02 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,3 +123,24 @@
 // 			place_number(big, stack, stack_b);
 // 	}
 // }
+
+void	check_stack_b(t_stack **stack, t_stack **stack_b)
+{
+	t_stack *list;
+
+
+	if (stack_b == NULL)
+		push_b(stack, stack_b);
+	else
+	{
+		push_b(stack, stack_b);
+		list = search_list(*stack_b, lstsize(*stack));
+		if (list != NULL)
+		{
+			if ((*stack_b)->nb < list->nb)
+			rotate_a(stack_b, "--rb\n");
+		}
+		if ((*stack_b)->nb > (*stack)->next->nb)
+			swap_a_b(*stack_b, "sb\n");
+	}
+}

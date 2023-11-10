@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 23:20:36 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/07 21:09:59 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/09 21:47:18 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	make_move(int position, t_stack **next_b, t_stack **stack)
 
 	i = 1;
 	position = lstsize(*stack) - position;
-	while (position > i)
+	while (position >= i)
 	{
 		// Le dernier élément devient le premier.
 		reverse_rotate_a(stack, "rra\n");
@@ -71,7 +71,7 @@ void	re_make_move(int position, t_stack **next_b, t_stack **stack)
 	j = 1;
 	i = 1;
 	// printf("le nombre que l'on va push  -> %d\n", (*next_b)->nb);
-	printlst(stack);
+	// printlst(stack);
 	while (position >= i)
 	{
 		//Le premier élément devient le dernier.
@@ -93,20 +93,13 @@ void	place(t_stack **next_b, t_stack **stack, int len_stack_a)
 {
 	int	position;
 
-	// printf("len of b place-function %d \n", lstsize(*next_b));
-	// printf("len of a place-function %d \n", lstsize(*stack));
 	position = where_place(next_b, stack);
-	// (void)len_stack_a;
 	if (position == -1 || position == 1)
 	{
 		push_a(next_b, stack);
 		if (stack != NULL)
-		{
 			if ((*stack)->nb > (*stack)->next->nb)
-			{
 				swap_a_b(*stack, "sa\n");
-			}
-		}
 	}
 	if (position > len_stack_a / 2 && position != 1 && position != -1)
 	{
@@ -122,3 +115,4 @@ void	go_place_number(t_stack **stack, t_stack **stack_b)
 {
 	place(stack_b, stack, lstsize(*stack));
 }
+
