@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 14:50:30 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/10 02:59:23 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/10 13:11:08 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,6 @@ void		put_ontop(int place_of_nb, t_stack **stack);
 void		move_on_stack_a(t_stack **stack, t_stack **stack_b);
 void		check_stack_a(t_stack **stack, t_stack **stack_b);
 void		go_place_number(t_stack **next_b, t_stack **stack);
+void		push_biger(t_stack **stack, t_stack **stack_b);
 
 # endif

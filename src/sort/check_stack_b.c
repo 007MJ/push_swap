@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:42:31 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/10 03:03:02 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/10 13:04:22 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,8 +127,9 @@
 void	check_stack_b(t_stack **stack, t_stack **stack_b)
 {
 	t_stack *list;
+	t_stack	*second;
 
-
+	second = search_list(*stack_b, 2);
 	if (stack_b == NULL)
 		push_b(stack, stack_b);
 	else
@@ -138,9 +139,10 @@ void	check_stack_b(t_stack **stack, t_stack **stack_b)
 		if (list != NULL)
 		{
 			if ((*stack_b)->nb < list->nb)
-			rotate_a(stack_b, "--rb\n");
+			rotate_a(stack_b, "rb\n");
 		}
-		if ((*stack_b)->nb > (*stack)->next->nb)
-			swap_a_b(*stack_b, "sb\n");
+		if (lstsize(*stack_b) > 2)
+			if ((*stack_b)->nb > second->nb)
+				swap_a_b(*stack_b, "sb\n");
 	}
 }
