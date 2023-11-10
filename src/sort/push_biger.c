@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 13:10:18 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/10 15:31:27 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/10 16:18:48 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	get_on_top(t_stack **stack_b, t_stack **stack, int n, int move)
 {
-	printf("number of move %d\n", move);
+	// printf("number of move %d\n", move);
 	if (n == 2)
 	{
 		while (move <= lstsize(*stack_b))
@@ -73,7 +73,7 @@ void	push_biger(t_stack **stack, t_stack **stack_b)
 			tmp = current->nb;
 		current = current->next;
 	}
-	printf("le plus grand numbre %d\n", tmp);
+	// printf("le plus grand numbre %d\n", tmp);
 	// (void)stack;
 	rb_rrb(stack_b, stack, tmp);
 }

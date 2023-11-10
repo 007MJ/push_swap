@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:53:17 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/10 02:26:53 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/10 17:44:40 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,8 @@ void	push_hundred(t_stack **stack, t_stack **stack_b)
 {
 	if (lstsize(*stack) >= 100 && lstsize(*stack) <= 500)
 		sort_hundred(stack, stack_b, 5);
+	if (lstsize(*stack)>= 500)
+		sort_hundred(stack, stack_b, 11);
 }
 
 void	push_number(t_stack **stack, t_stack **stack_b)

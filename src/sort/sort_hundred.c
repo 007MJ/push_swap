@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 21:18:24 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/10 15:33:18 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/10 17:45:13 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ void	while_stack_b(t_stack **stack, t_stack **stack_b)
 		push_biger(stack, stack_b);
 	}
 	push_a(stack_b, stack);
-	printf("how much still in stack b %d\n", lstsize(*stack_b));
+	// printf("how much still in stack b %d\n", lstsize(*stack_b));
 }
 
 void		sort_hundred(t_stack **stack, t_stack **stack_b, int i)
@@ -110,11 +110,11 @@ void		sort_hundred(t_stack **stack, t_stack **stack_b, int i)
 		index_list = hold_number(stack, j, lstsize(*stack));
 		// if (index_list != NULL)
 		// 	printf("list %d\n", index_list->nb);
-		up_or_down(stack, index_list);
+		// up_or_down(stack, index_list);
 		check_stack_b(stack, stack_b);
 		if (index_list == NULL)
 			j++;
 	}
-	// still_number(stack, stack_b);
-	// while_stack_b(stack, stack_b);
+	still_number(stack, stack_b);
+	while_stack_b(stack, stack_b);
 }
