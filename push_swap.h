@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 14:50:30 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/11 15:11:46 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/12 01:55:56 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,15 +74,15 @@ void		check_stack_b(t_stack **stack, t_stack **stack_b);
 int			first_count_move(t_stack **stack, t_stack *list);
 int			second_count_move(t_stack **stack, t_stack *list);
 int			is_followed(t_stack **stack);
-void		reset_on(t_stack **stack);
 int			which_number(t_stack **stack, int i);
+void		reset_on(t_stack **stack);
 void		place_number(t_stack *place, t_stack **stack, t_stack **stack_b);
 void		put_ontop(int place_of_nb, t_stack **stack);
 void		move_on_stack_a(t_stack **stack, t_stack **stack_b);
 void		check_stack_a(t_stack **stack, t_stack **stack_b);
 void		go_place_number(t_stack **next_b, t_stack **stack);
 void		push_biger(t_stack **stack, t_stack **stack_b);
-void		small_number(t_stack **stack, t_stack **stack_b, int bewteen);
+void		small_number(t_stack **stack, t_stack **stack_b);
 void		big_number(t_stack **stack, t_stack **stack_b, int bewteen);
 void		five_hundred(t_stack **stack, t_stack **stack_b, int i);
 

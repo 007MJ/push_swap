@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 21:18:24 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/11 23:24:45 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/11 23:47:17 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,13 +149,10 @@ void	sort_hundred(t_stack **stack, t_stack **stack_b, int i)
 	j = 0;
 	while (lstsize(*stack) > 0)
 	{
-		// big_number(stack, stack_b, i);
 		up_or_down(stack, hold_number(stack, i, start));
 		check_stack_b(stack, stack_b);
 		if (is_chunks_in_stack_a(stack, start) == -1)
 			start = lstsize(*stack) - 25;
-
-
 	}
 	still_number(stack, stack_b);
 	while_stack_b(stack, stack_b);
