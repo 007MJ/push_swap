@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 21:18:24 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/10 02:17:06 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/11 19:31:40 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ t_stack	**put_index(t_stack **stack, int i)
 		ticket_list(stack, index);
 		index++;
 	}
-	chunks(stack , i);
+	// chunks(stack , i);
 	return (stack);
 }
 

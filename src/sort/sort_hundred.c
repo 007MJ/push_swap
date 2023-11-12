@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 21:18:24 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/10 17:45:13 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/11 15:31:21 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,11 @@ void let_s(t_stack **stack)
 	current = *stack;
 	while (current != NULL)
 	{
-		printf("index-number-> %d and chunks->%d\n", current->index, current->chunks);
+		// printf("index-number-> %d and chunks->%d\n", current->index, current->chunks);
 		current = current->next;
 	}
 }
+
 void	still_number(t_stack **stack, t_stack **stack_b)
 {
 	int	len;
@@ -77,7 +78,8 @@ void	still_number(t_stack **stack, t_stack **stack_b)
 	{
 
 		len = lstsize(*stack);
-		check_stack_b(stack, stack_b);
+		// check_stack_b(stack, stack_b);
+		push_b(stack, stack_b);
 	}
 	// if (len != 0)
 	// 	check_stack_b(stack, stack_b);
@@ -97,24 +99,42 @@ void	while_stack_b(t_stack **stack, t_stack **stack_b)
 	// printf("how much still in stack b %d\n", lstsize(*stack_b));
 }
 
-void		sort_hundred(t_stack **stack, t_stack **stack_b, int i)
-{
-	t_stack	*index_list;
-	int		j;
+// void		sort_hundred(t_stack **stack, t_stack **stack_b, int i)
+// {
+	// t_stack	*index_list;
+	// int		j;
 
+	// j = 0;
+	// put_index(stack, i);
+	// while (j <= i)
+	// {
+	// 	reset_on(stack);
+	// 	index_list = hold_number(stack, j, lstsize(*stack));
+	// 	// if (index_list != NULL)
+	// 	// 	printf("list %d\n", index_list->nb);
+	// 	// up_or_down(stack, index_list);
+	// check_stack_b(stack, stack_b);
+	// 	if (index_list == NULL)
+	// 		j++;
+	// }
+	// still_number(stack, stack_b);
+	// while_stack_b(stack, stack_b);
+// }
+
+void	sort_hundred(t_stack **stack, t_stack **stack_b, int i)
+{
+	int	len;
+	int	j;
+
+	len = lstsize(*stack) / 2;
 	j = 0;
-	put_index(stack, i);
-	while (j <= i)
+	while (lstsize(*stack) > 0 && j < len)
 	{
-		reset_on(stack);
-		index_list = hold_number(stack, j, lstsize(*stack));
-		// if (index_list != NULL)
-		// 	printf("list %d\n", index_list->nb);
-		// up_or_down(stack, index_list);
+		big_number(stack, stack_b, i);
 		check_stack_b(stack, stack_b);
-		if (index_list == NULL)
-			j++;
+		j++;
 	}
 	still_number(stack, stack_b);
 	while_stack_b(stack, stack_b);
+
 }

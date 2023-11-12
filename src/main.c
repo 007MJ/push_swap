@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:53:17 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/10 17:44:40 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/11 23:15:50 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,10 +87,10 @@ void	see_list_afert_push(t_stack **stack)
 
 void	push_hundred(t_stack **stack, t_stack **stack_b)
 {
-	if (lstsize(*stack) >= 100 && lstsize(*stack) <= 500)
-		sort_hundred(stack, stack_b, 5);
+	if (lstsize(*stack) >= 100 && lstsize(*stack) < 500)
+		sort_hundred(stack, stack_b, 10);
 	if (lstsize(*stack)>= 500)
-		sort_hundred(stack, stack_b, 11);
+		five_hundred(stack, stack_b, 45);
 }
 
 void	push_number(t_stack **stack, t_stack **stack_b)
@@ -132,5 +132,3 @@ int	main (int argc, char *argv[])
 	// printlst(&stack_b);
 	// printf("size of stack b %d\n", lstsize(stack_b));
 }
-
-///// push nombre par chunks genre le 0 a 19 20 a 30 les truck comme ca e34

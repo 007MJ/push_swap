@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 13:30:37 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/10 02:34:09 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/11 22:48:49 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,55 +26,95 @@ void on_see(t_stack **stack)
 	}
 }
 
-t_stack		*less_move(t_stack **stack, int middle, int chunks)
+int	hould_count(t_stack **stack, t_stack	*list)
 {
-	t_stack	*first;
-	t_stack	*tmp_list;
-	int		tmp;
-	int		stop;
+	t_stack	*current;
+	int		i;
 
-	stop = 0;
-	tmp_list = new_stack();
-	tmp_list->move = lstsize(*stack);
-	while ( stop != 1)
+	current = *stack;
+	i = 1;
+	while (current != NULL)
 	{
-		first = is_first(stack, chunks);
-		if (first == NULL)
-			return (first);
-		tmp = first_count_move(stack, first);
-		if (tmp > middle)
+		// printf("current->%d == list->%d\n",current->nb, list->nb);
+		if (current->nb == list->nb)
 		{
-			if (tmp == lstsize (*stack) - 1)
-				tmp = lstsize(*stack) - tmp + 1;
+			if (i > lstsize(*stack) / 2)
+			{
+				i = lstsize(*stack) - i;
+				list->ra_rra = 2;
+				if (i == 0)
+					i++;
+			}
 			else
-				tmp = lstsize(*stack) - tmp;
-			tmp_list->ra_rra = 2;
+				list->ra_rra = 1;
+			return (i);
 		}
-		else
-			tmp_list->ra_rra = 1;
-		if ( tmp_list->move > tmp)
-		{
-			tmp_list = first;
-			tmp_list->move = tmp;
-		}
-		stop = first->on;
-		first->on = 1;
+		current = current->next;
+		i++;
 	}
-	return (tmp_list);
+	return (-1);
 }
 
-t_stack  *hold_number(t_stack **stack, int chunks, int len)
+void	give_move(t_stack **stack)
 {
-	t_stack	*first;
-	int		middle;
+	t_stack	*current;
 
-	middle = len / 2;
-	if (middle % 2 == 0)
-		middle++;
-	first = less_move(stack, middle, chunks);
-	if (first == NULL)
-		return (NULL);
-	if (first != NULL && first->move == 0)
-		first->move = 1;
-	return (first);
+	current = *stack;
+	while (current != NULL)
+	{
+		if (current->on == 1)
+		{
+			current->move = hould_count(stack, current);
+		}
+		current = current->next;
+	}
+}
+t_stack	*less_move(t_stack **stack)
+{
+	int		tmp;
+	t_stack	*tmp_list;
+	t_stack	*current;
+
+	tmp = lstsize(*stack);
+	current = *stack;
+	while (current != NULL)
+	{
+		if (current->on == 1)
+		{
+			if (tmp > current->move)
+			{
+				tmp = current->move;
+				tmp_list = current;
+			}
+		}
+		current = current->next;
+	}
+	(void)stack;
+	return (tmp_list);
+}
+void	number_we_check(t_stack **stack, int chunks, int number)
+{
+	t_stack	*current;
+	int	start;
+
+	current = *stack;
+	start = 0;
+	while (current != NULL && start < chunks)
+	{
+		if (current->nb >= number)
+			current->on = 1;
+		start++;
+		current = current->next;
+	}
+}
+t_stack  *hold_number(t_stack **stack, int chunks, int number)
+{
+	reset_on(stack);
+	t_stack	*less;
+
+	number_we_check(stack, chunks, number);
+	give_move(stack);
+	less = less_move(stack);
+	// printf("less list %d\n" , less->nb);
+	return (less);
 }

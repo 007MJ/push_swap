@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:42:31 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/10 17:39:49 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/11 22:22:54 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,52 +97,41 @@
 // 		return (1);
 // }
 
-// void	check_stack_b(t_stack **stack, t_stack **stack_b, t_stack *list, int lenstack_a)
-// {
-// 	t_stack	*big;
-// 	t_stack	*middle;
-// 	t_stack	*smaller;
-
-// 	// big = NULL;
-// 	// middle = NULL;
-// 	// smaller = NULL;
-// 	(void)lenstack_a;
-// 	(void)list;
-// 	if (stack_b == NULL || lstsize(*stack_b) < 3 || lstsize(*stack) <= 3)
-// 		push_b(stack, stack_b);
-// 	if (stack_b != NULL && lstsize(*stack) > 3)
-// 	{
-// 		smaller = which_place(stack_b, 1);
-// 		middle = which_place(stack_b, 2);
-// 		big = which_place(stack_b, 3);
-// 		if (search_for_closer((*stack)->nb, smaller->nb, middle->nb, big->nb) == 1)
-// 			place_number(smaller, stack, stack_b);
-// 		if (search_for_closer((*stack)->nb, smaller->nb, middle->nb, big->nb) == 2)
-// 			place_number(middle, stack, stack_b);
-// 		if (search_for_closer((*stack)->nb, smaller->nb, middle->nb, big->nb) == 3)
-// 			place_number(big, stack, stack_b);
-// 	}
-// }
-
 void	check_stack_b(t_stack **stack, t_stack **stack_b)
 {
-	t_stack *list;
-	t_stack	*second;
-
-	second = search_list(*stack_b, 2);
-	if (stack_b == NULL)
+	// t_stack	*second;
+	if (stack_b != NULL)
 		push_b(stack, stack_b);
 	else
 	{
 		push_b(stack, stack_b);
-		list = search_list(*stack_b, lstsize(*stack));
-		if (list != NULL)
-		{
-			if ((*stack_b)->nb < list->nb)
-			rotate_a(stack_b, "rb\n");
-		}
-		if (lstsize(*stack_b) > 2)
-			if ((*stack_b)->nb > second->nb)
-				swap_a_b(*stack_b, "sb\n");
+		// second = search_list(*stack_b, 2);
+		// if ((*stack)->nb > second->nb)
+		// 	swap_a_b(*stack_b, "sb\n");
+		// if((*stack)->nb > lstsize(*stack) / 2)
+		// 	rotate_a(stack_b, "rb\n");
 	}
 }
+
+// void	check_stack_b(t_stack **stack, t_stack **stack_b)
+// {
+// 	t_stack *list;
+// 	t_stack	*second;
+
+// 	second = search_list(*stack_b, 1);
+// 	if (stack_b == NULL)
+// 		push_b(stack, stack_b);
+// 	else
+// 	{
+// 		push_b(stack, stack_b);
+// 		list = search_list(*stack_b, lstsize(*stack));
+// 		if (lstsize(*stack_b) > 2)
+// 			if ((*stack_b)->nb > second->nb)
+// 				swap_a_b(*stack_b, "sb\n");
+// 		if (list != NULL)
+// 		{
+// 			if ((*stack_b)->nb > list->nb)
+// 				rotate_a(stack_b, "rb\n");
+// 		}
+// 	}
+// }

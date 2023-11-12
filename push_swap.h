@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 14:50:30 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/10 13:11:08 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/11 15:11:46 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,8 @@ void		move_on_stack_a(t_stack **stack, t_stack **stack_b);
 void		check_stack_a(t_stack **stack, t_stack **stack_b);
 void		go_place_number(t_stack **next_b, t_stack **stack);
 void		push_biger(t_stack **stack, t_stack **stack_b);
+void		small_number(t_stack **stack, t_stack **stack_b, int bewteen);
+void		big_number(t_stack **stack, t_stack **stack_b, int bewteen);
+void		five_hundred(t_stack **stack, t_stack **stack_b, int i);
 
 # endif

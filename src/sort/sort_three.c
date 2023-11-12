@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 13:37:12 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/23 00:58:52 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/11 18:28:16 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	sort_three(t_stack **stack)
 	{
 		swap_a_b(*stack, "sa\n");
 		if (one->nb > two->nb && one->nb > three->nb && two->nb < three->nb)
-		rotate_a(stack, "ra\n");
+			rotate_a(stack, "ra\n");
 	}
 	if (three->nb < two->nb && three->nb < one->nb && two->nb > one->nb)
 		reverse_rotate_a(stack, "rra\n");

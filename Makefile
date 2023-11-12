@@ -6,7 +6,7 @@
 #    By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/15 18:06:53 by mnshimiy          #+#    #+#              #
-#    Updated: 2023/11/10 13:11:37 by mnshimiy         ###   ########.fr        #
+#    Updated: 2023/11/11 15:11:06 by mnshimiy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRCS    = src/main.c  src/parsing/is_alpha.c src/parsing/is_number.c src/parsing
 		src/sort/sort_three.c src/sort/sort_five.c src/sort/sort_hundred.c src/sort/put_index.c src/sort/chunks.c src/sort/hold_number.c\
 		src/sort/is_first.c src/sort/fund_chunks.c src/sort/first_count_move.c src/sort/second_count_move.c src/sort/is_followed.c\
 		src/sort/up_or_down.c src/list/reset_on.c  src/sort/which_number.c src/sort/place_number.c src/sort/put_ontop.c src/sort/move_on_stack_a.c \
-		src/sort/check_stack_a.c src/sort/go_place_number.c src/sort/check_stack_b.c src/sort/push_biger.c
+		src/sort/check_stack_a.c src/sort/go_place_number.c src/sort/check_stack_b.c src/sort/push_biger.c src/sort/small_number.c src/sort/big_number.c src/sort/five_hundred.c
 
 OBJS = $(SRCS:.c=.o)
 
