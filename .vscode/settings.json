@@ -1,0 +1,7 @@
+{
+	"files.associations": {
+		"iterator": "c",
+		"stack": "c",
+		"random": "c"
+	}
+}
