@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 21:18:24 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/11 15:31:21 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/11 23:24:45 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,19 +120,42 @@ void	while_stack_b(t_stack **stack, t_stack **stack_b)
 	// still_number(stack, stack_b);
 	// while_stack_b(stack, stack_b);
 // }
+int	is_chunks_in_stack_a(t_stack **stack, int start)
+{
+	t_stack	*current;
+	int		i;
+
+	i = 0;
+	current = *stack;
+	while (current != NULL)
+	{
+		if (current->nb >= start)
+			i++;
+		current = current->next;
+	}
+	if (i > 0)
+		return (i);
+	return (-1);
+}
 
 void	sort_hundred(t_stack **stack, t_stack **stack_b, int i)
 {
 	int	len;
+	int	start;
 	int	j;
 
+	start = lstsize(*stack) - 25;
 	len = lstsize(*stack) / 2;
 	j = 0;
-	while (lstsize(*stack) > 0 && j < len)
+	while (lstsize(*stack) > 0)
 	{
-		big_number(stack, stack_b, i);
+		// big_number(stack, stack_b, i);
+		up_or_down(stack, hold_number(stack, i, start));
 		check_stack_b(stack, stack_b);
-		j++;
+		if (is_chunks_in_stack_a(stack, start) == -1)
+			start = lstsize(*stack) - 25;
+
+
 	}
 	still_number(stack, stack_b);
 	while_stack_b(stack, stack_b);
