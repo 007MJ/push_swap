@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 20:07:46 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/24 19:08:16 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/23 18:44:43 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 void	rotate_a(t_stack **stack, char *str)
 {
-	ft_putstr(str);
-	t_stack	*new;
 	int		nb;
+	int		index;
 
+	ft_putstr(str);
 	nb = (*stack)->nb;
-	new = malloc(sizeof(t_stack));
-	if (!new)
-		return ;
+	index = (*stack)->index;
 	delete_first(stack);
-	add_last(*stack, nb);
+	add_last(*stack, nb, index);
 }

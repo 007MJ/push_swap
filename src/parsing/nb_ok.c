@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 13:46:25 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/08/22 16:38:48 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/24 11:06:27 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,30 +17,35 @@ int	neg(char *str)
 	int	i;
 
 	i = 0;
-	if (str[i] == '-' && (str[i + 1] >= '0' && str[i + 1] <= '9'))
+	if (str[i - 1] == ' ')
+	{
+		return (1);
+	}
+	if ((str[i + 1] >= '0' && str[i + 1] <= '9'))
 		return (1);
 	return (0);
 }
 
-int nb_ok(char *str)
+int	nb_ok(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	if (neg(str) == 1)
-		i++;
 	while (str[i])
 	{
-		if (str[i] == '-')
+		if (str[i] == '-' || str[i] == '+')
 		{
-			if ((str[i + 1] >= '0' && str[i + 1] <= '9') && str[i - 1] == ' ')
+			if (i > 0)
 			{
-				i++;
+				if (str[i - 1] != ' ')
+					return (-1);
 			}
+			if (str[i + 1] >= '0' && str[i + 1] <= '9')
+				i++;
 			else
-				return (0);
+				return (-1);
 		}
 		i++;
 	}
-	return (1);
+	return (0);
 }

@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   put_ontop.c                                        :+:      :+:    :+:   */
+/*   min_max.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 14:02:53 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/04 22:08:17 by mnshimiy         ###   ########.fr       */
+/*   Created: 2023/11/16 15:32:45 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/11/17 12:27:28 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	put_ontop(int place_of_nb, t_stack **stack_b)
+long int	min_max(long int mx)
 {
-	int	i;
-
-	i = 1;
-	if (stack_b == NULL)
-		return ;
-	while (i <= place_of_nb)
+	if (mx > 2147483647)
 	{
-		reverse_rotate_a(stack_b, "ra\n");
-		i++;
+		ft_putstr("Error\n");
+		return (-1);
 	}
+	if (mx <= -2147483648)
+	{
+		ft_putstr("Error\n");
+		return (-1);
+	}
+	return (1);
 }

@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fund_chunks.c                                      :+:      :+:    :+:   */
+/*   still_number_f.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 16:32:50 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/19 20:35:46 by mnshimiy         ###   ########.fr       */
+/*   Created: 2023/11/14 16:41:41 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/11/14 16:42:12 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int	fund_chunks(t_stack **stack, int chunk)
+void	still_numbe_f(t_stack **stack, t_stack **stack_b)
 {
-	t_stack *current;
-	// int		i;
-	int		y;
+	int	len;
 
-	// i = 1;
-	y = 0;
-	current = *stack;
-	while (current != NULL)
+	len = lstsize(*stack);
+	while (len > 0)
 	{
-		if (current->chunks == chunk)
-			y++;
-		// i++;
-		current = current->next;
+		len = lstsize(*stack);
+		push_b(stack, stack_b);
 	}
-	return (y);
 }

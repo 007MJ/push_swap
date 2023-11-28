@@ -6,24 +6,15 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 14:50:30 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/12 01:55:56 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/24 19:58:27 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
-
-int				not_numbe(char *str);
-int				nb_ok(char *str);
-int				is_number(char *str);
-int				is_alpha(char *str);
-
-long	int		ft_atoi(char *str);
-void			ft_putstr(char *str);
-int				ft_strlen(char *str);
+# include <stdlib.h>
+# include <stdio.h>
+# include <unistd.h>
 
 typedef struct s_stack
 {
@@ -33,18 +24,21 @@ typedef struct s_stack
 	int				on;
 	int				move;
 	int				ra_rra;
-	struct	s_stack	*next;
+	struct s_stack	*next;
 }	t_stack;
 
-typedef struct s_info
-{
-	int position;
-	int position_one;
-	char *str;
-}	t_infos;
+long int	ft_atoi(const char *str);
+int			not_numbe(char *str);
+int			nb_ok(char *str);
+int			is_number(char *str);
+int			is_alpha(char *str);
+void		ft_putstr(char *str);
+int			ft_strlen(char *str);
+long int	min_max(long int n);
 
 t_stack		*new_stack(void);
-void		add_last(t_stack	*lst, int newnb);
+void		add_last(t_stack	*lst, int newnb, int index);
+void		add_stack(t_stack	*lst, int newnb);
 void		swap_list(t_stack *stack, int position, int position_one);
 void		rr(t_stack **first, t_stack **second);
 void		rotate_a(t_stack **stack, char *str);
@@ -64,26 +58,21 @@ int			lstsize(t_stack *lst);
 void		sort_three(t_stack **stack);
 void		sort_five(t_stack **stack, t_stack **stack_b);
 void		sort_hundred(t_stack **stack, t_stack **stack_b, int i);
-t_stack		**put_index(t_stack **stack, int i);
-t_stack		**chunks(t_stack **stack, int nb);
-t_stack		*hold_number(t_stack **stack, int chunks, int len);
-t_stack		*is_first(t_stack **stack, int chunk);
+t_stack		*hold_number(t_stack **stack, int i, int number);
 void		up_or_down(t_stack **stack, t_stack *list);
-int			fund_chunks(t_stack **stack, int chunk);
+void		five_up_or_down(t_stack **stack, t_stack *list);
 void		check_stack_b(t_stack **stack, t_stack **stack_b);
-int			first_count_move(t_stack **stack, t_stack *list);
-int			second_count_move(t_stack **stack, t_stack *list);
-int			is_followed(t_stack **stack);
-int			which_number(t_stack **stack, int i);
-void		reset_on(t_stack **stack);
-void		place_number(t_stack *place, t_stack **stack, t_stack **stack_b);
-void		put_ontop(int place_of_nb, t_stack **stack);
-void		move_on_stack_a(t_stack **stack, t_stack **stack_b);
-void		check_stack_a(t_stack **stack, t_stack **stack_b);
-void		go_place_number(t_stack **next_b, t_stack **stack);
 void		push_biger(t_stack **stack, t_stack **stack_b);
-void		small_number(t_stack **stack, t_stack **stack_b);
+int			small_number(t_stack **stack);
 void		big_number(t_stack **stack, t_stack **stack_b, int bewteen);
 void		five_hundred(t_stack **stack, t_stack **stack_b, int i);
-
-# endif
+int			duplicate(t_stack **stack);
+int			is_sort(t_stack **stack);
+void		free_stack(t_stack *stack);
+t_stack		*put_index(t_stack **stack);
+int			len_by_index(t_stack **stack);
+int			is_chunks_in_stack(t_stack **stack, int start);
+void		still_numbe_f(t_stack **stack, t_stack **stack_b);
+void		reset_on(t_stack **stack);
+t_stack		*small_five(t_stack **stack, int i, int number);
+#endif

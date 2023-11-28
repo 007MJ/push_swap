@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 15:59:51 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/11 13:59:43 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/12 09:31:40 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 int	ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while (str[i])
-		i++;
+	if (str != NULL)
+	{
+		while (str[i])
+			i++;
+	}
 	return (i);
 }

@@ -1,44 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   second_count_move.c                                :+:      :+:    :+:   */
+/*   len_by_index.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/10 20:27:20 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/18 19:11:29 by mnshimiy         ###   ########.fr       */
+/*   Created: 2023/11/13 13:14:58 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/11/16 17:20:05 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int second_count_move(t_stack **stack, t_stack *list)
+int	len_by_index(t_stack **stack)
 {
-	int	i;
-	int	middle;
-	t_stack *current;
+	int		tmp;
+	t_stack	*current;
 
+	tmp = 0;
+	current = NULL;
 	current = *stack;
-	middle = lstsize(*stack) / 2;
-	if (middle % 2 != 0)
-		middle++;
-	i = 1;
-	while (current != NULL && list != NULL)
+	while (current != NULL)
 	{
-		if (i > middle)
-			break ;
+		if (tmp < current->index && tmp != current->index)
+		{
+			tmp = current->index;
+		}
 		current = current->next;
-		i++;
 	}
-	i = 1;
-	while (current != NULL && list != NULL)
-	{
-		if (list->index == current->index)
-			return (i);
-		current = current->next;
-		i++;
-	}
-	if (list != NULL)
-		return (-1);
-	return (i);
+	return (tmp);
 }

@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 19:56:47 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/02 12:21:25 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/23 18:08:53 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,3 @@ char	**ft_split(const char *s, char c)
 		return (NULL);
 	return (mysplit(split, s, c));
 }
-

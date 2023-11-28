@@ -1,44 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   chunks.c                                           :+:      :+:    :+:   */
+/*   is_chunks_in_stack.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 10:08:05 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/10 01:24:57 by mnshimiy         ###   ########.fr       */
+/*   Created: 2023/11/14 16:38:00 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/11/16 17:20:23 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-// 100 nombre par chunks 5 chunks
-
-
-int	nb_per_chunks(int len, int nb_chunks)
-{
-	int	nb_per_chunks;
-	int	nb_remaing;
-
-	nb_per_chunks = len / nb_chunks;
-	nb_remaing = len % nb_chunks;
-	if (nb_remaing > 0)
-		nb_per_chunks++;
-	return (nb_per_chunks);
-}
-
-t_stack	**chunks(t_stack **stack, int nb)
+int	is_chunks_in_stack(t_stack **stack, int start)
 {
 	t_stack	*current;
-	int		chunks_size;
+	int		i;
 
-	chunks_size =  nb_per_chunks(lstsize(*stack), nb);
+	i = 0;
 	current = *stack;
 	while (current != NULL)
 	{
-		current->chunks = (current->index / chunks_size);
-		// printf("index-number-> %d and chunks->%d\n", current->index, current->chunks);
+		if (current->index >= start)
+			i++;
 		current = current->next;
 	}
-	return (stack);
+	if (i > 0)
+		return (i);
+	return (-1);
 }

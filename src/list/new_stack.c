@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 18:14:06 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/09/19 16:50:53 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/16 17:11:32 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ t_stack	*new_stack(void)
 	if (new == NULL)
 		return (NULL);
 	new->nb = 0;
+	new->on = 0;
+	new->chunks = 0;
+	new->index = 0;
+	new->ra_rra = 0;
 	new->next = NULL;
 	return (new);
 }

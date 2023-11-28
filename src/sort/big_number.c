@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 15:08:22 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/11 19:16:10 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/12 09:39:19 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ int	count_in_stack(t_stack **stack, t_stack	*list)
 	i = 1;
 	while (current != NULL)
 	{
-		// printf("current->%d == list->%d\n",current->nb, list->nb);
 		if (current->nb == list->nb)
 			return (i);
 		current = current->next;
@@ -69,4 +68,3 @@ void	big_number(t_stack **stack, t_stack **stack_b, int bewteen)
 	up_or_down(stack, small);
 	(void)stack_b;
 }
-

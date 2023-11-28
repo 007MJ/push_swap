@@ -6,25 +6,11 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 13:30:37 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/11 22:48:49 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/17 12:26:16 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
-
-
-void on_see(t_stack **stack)
-{
-	t_stack *current;
-
-	current = *stack;
-	while (current != NULL)
-	{
-		if (current->chunks == 0)
-			printf("current->index %d, current->chunks %d, current->nb %d\n", current->index, current->chunks, current->nb);
-		current = current->next;
-	}
-}
 
 int	hould_count(t_stack **stack, t_stack	*list)
 {
@@ -35,7 +21,6 @@ int	hould_count(t_stack **stack, t_stack	*list)
 	i = 1;
 	while (current != NULL)
 	{
-		// printf("current->%d == list->%d\n",current->nb, list->nb);
 		if (current->nb == list->nb)
 		{
 			if (i > lstsize(*stack) / 2)
@@ -69,12 +54,14 @@ void	give_move(t_stack **stack)
 		current = current->next;
 	}
 }
+
 t_stack	*less_move(t_stack **stack)
 {
 	int		tmp;
 	t_stack	*tmp_list;
 	t_stack	*current;
 
+	tmp_list = NULL;
 	tmp = lstsize(*stack);
 	current = *stack;
 	while (current != NULL)
@@ -89,32 +76,33 @@ t_stack	*less_move(t_stack **stack)
 		}
 		current = current->next;
 	}
-	(void)stack;
 	return (tmp_list);
 }
+
 void	number_we_check(t_stack **stack, int chunks, int number)
 {
 	t_stack	*current;
-	int	start;
+	int		start;
 
 	current = *stack;
 	start = 0;
 	while (current != NULL && start < chunks)
 	{
-		if (current->nb >= number)
+		if (current->index >= number)
+		{
 			current->on = 1;
+		}
 		start++;
 		current = current->next;
 	}
 }
-t_stack  *hold_number(t_stack **stack, int chunks, int number)
+
+t_stack	*hold_number(t_stack **stack, int i, int number)
 {
-	reset_on(stack);
 	t_stack	*less;
 
-	number_we_check(stack, chunks, number);
+	number_we_check(stack, i, number);
 	give_move(stack);
 	less = less_move(stack);
-	// printf("less list %d\n" , less->nb);
 	return (less);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/27 21:18:24 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/11 19:31:40 by mnshimiy         ###   ########.fr       */
+/*   Created: 2023/11/13 12:50:26 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/11/17 12:28:49 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	small_list(t_stack **stack)
 	current = *stack;
 	while (current != NULL)
 	{
-		if (current->on == 0 )
+		if (current->on == 0)
 		{
 			tmp = current->nb;
 			break ;
@@ -52,40 +52,24 @@ void	ticket_list(t_stack **stack, int i)
 		{
 			current->on = 1;
 			current->index = i;
+			break ;
 		}
 		current = current->next;
 	}
 }
 
-// void	printindex(t_stack	*stack)
-// {
-// 	t_stack *current;
-
-// 	current = stack;
-// 	while (current != NULL)
-// 	{
-// 		printf("number-list ->%d and inde ->%d\n", current->nb, current->index);
-// 		current = current->next;
-// 	}
-// }
-
-t_stack	**put_index(t_stack **stack, int i)
+t_stack	*put_index(t_stack **stack)
 {
-	// t_stack	*current;
 	int		index;
 	int		size;
-	(void)i;
 
+	reset_on(stack);
 	size = lstsize(*stack);
-	index = 0;
-	// current = *stack;
-	while (index <= size)
+	index = 1;
+	while (index < size)
 	{
 		ticket_list(stack, index);
 		index++;
 	}
-	// chunks(stack , i);
-	return (stack);
+	return (*stack);
 }
-
-

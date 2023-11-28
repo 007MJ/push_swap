@@ -1,0 +1,106 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   small_five.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/24 16:13:25 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/11/24 19:52:05 by mnshimiy         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../../push_swap.h"
+
+int	hould_c(t_stack **stack, t_stack	*list)
+{
+	t_stack	*current;
+	int		i;
+
+	current = *stack;
+	i = 1;
+	while (current != NULL)
+	{
+		if (current->nb == list->nb)
+		{
+			if (i > lstsize(*stack) / 2)
+			{
+				i = lstsize(*stack) - i;
+				list->ra_rra = 2;
+				if (i == 0)
+					i++;
+			}
+			else
+				list->ra_rra = 1;
+			return (i);
+		}
+		current = current->next;
+		i++;
+	}
+	return (-1);
+}
+
+void	give_mv(t_stack **stack, int number)
+{
+	t_stack	*current;
+
+	current = *stack;
+	while (current != NULL)
+	{
+		if (current->on == 1 && current->index == number)
+		{
+			current->move = hould_c(stack, current);
+		}
+		current = current->next;
+	}
+}
+
+t_stack	*less_mv(t_stack **stack, int number)
+{
+	int		tmp;
+	t_stack	*tmp_list;
+	t_stack	*current;
+
+	tmp_list = NULL;
+	tmp = lstsize(*stack);
+	current = *stack;
+	while (current != NULL)
+	{
+		if (current->on == 1 && current->index == number)
+		{
+			if (tmp > current->move)
+			{
+				tmp = current->move;
+				tmp_list = current;
+			}
+		}
+		current = current->next;
+	}
+	return (tmp_list);
+}
+
+void	we_check(t_stack **stack, int chunks, int number)
+{
+	t_stack	*current;
+	int		start;
+
+	current = *stack;
+	start = 0;
+	while (current != NULL && start < chunks)
+	{
+		if (current->index == number)
+			current->on = 1;
+		start++;
+		current = current->next;
+	}
+}
+
+t_stack	*small_five(t_stack **stack, int i, int number)
+{
+	t_stack	*less;
+
+	we_check(stack, i, number);
+	give_mv(stack, number);
+	less = less_mv(stack, number);
+	return (less);
+}

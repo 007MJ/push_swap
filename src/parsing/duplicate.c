@@ -1,41 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_first.c                                         :+:      :+:    :+:   */
+/*   duplicate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 15:15:24 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/26 18:15:51 by mnshimiy         ###   ########.fr       */
+/*   Created: 2023/11/12 13:29:30 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/11/16 17:20:12 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-t_stack		*is_first(t_stack **stack, int chunk)
+int	duplicate(t_stack **stack)
 {
-	t_stack *current;
-	t_stack	*lstmp;
+	t_stack	*current;
+	t_stack	*check;
 
-
+	current = NULL;
+	check = NULL;
 	current = *stack;
-	if (fund_chunks(stack, chunk) == 0)
-		return (NULL);
+	check = *stack;
 	while (current != NULL)
 	{
-		if (current->chunks == chunk && current->on == 0)
+		current->on = 3;
+		while (check != NULL)
 		{
-			lstmp = current;
-			break ;
+			if (check->on != 3)
+			{
+				if (current->nb == check->nb)
+					return (-1);
+			}
+			check = check->next;
 		}
+		check = *stack;
 		current = current->next;
 	}
-	current = *stack;
-	while (current != NULL && lstmp != NULL)
-	{
-		if (current->chunks == chunk && lstmp->nb > current->nb && current->on == 0)
-			lstmp = current;
-		current = current->next;
-	}
-	return (lstmp);
+	return (0);
 }

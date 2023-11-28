@@ -6,7 +6,7 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 13:37:12 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/11/12 02:29:22 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/23 20:34:10 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,18 @@ void	sort_three(t_stack **stack)
 	if (one->nb > two->nb && two->nb < three->nb && three->nb > one->nb)
 		swap_a_b(*stack, "sa\n");
 	if (one->nb > two->nb && one->nb > three->nb && two->nb > three->nb)
-	{
 		swap_a_b(*stack, "sa\n");
-	}
 	if (two->nb > one->nb && two->nb > three->nb && one->nb > three->nb)
 		reverse_rotate_a(stack, "rra\n");
 	if (one->nb > two->nb && one->nb > three->nb && three->nb > two->nb)
 		rotate_a(stack, "ra\n");
-	if(one->nb < two->nb && one->nb < three->nb && two->nb > three->nb)
+	else
 	{
-		swap_a_b(*stack, "sa\n");
-		if (one->nb > two->nb && one->nb > three->nb && two->nb < three->nb)
-			rotate_a(stack, "ra\n");
+		if (one->nb < two->nb && one->nb < three->nb && two->nb > three->nb)
+		{
+			swap_a_b(*stack, "sa\n");
+			if (one->nb > two->nb && one->nb > three->nb && two->nb < three->nb)
+				rotate_a(stack, "ra\n");
+		}
 	}
-	// if (three->nb < two->nb && three->nb < one->nb && two->nb > one->nb)
-	// 	reverse_rotate_a(stack, "rra\n");
-	//4 3 2 1 5
 }

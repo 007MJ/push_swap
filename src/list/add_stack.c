@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   first_count_move.c                                 :+:      :+:    :+:   */
+/*   add_stack.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/10 20:21:43 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/21 14:07:53 by mnshimiy         ###   ########.fr       */
+/*   Created: 2023/11/16 12:55:57 by mnshimiy          #+#    #+#             */
+/*   Updated: 2023/11/16 17:42:00 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int first_count_move(t_stack **stack, t_stack *list)
+void	add_stack(t_stack *lst, int newnb)
 {
-	int		i;
+	t_stack	*new;
 	t_stack	*current;
-	int		middle;
 
-	current = *stack;
-	middle = lstsize(*stack) / 2;
-	i = 1;
-	if (middle % 2 != 0)
-		middle ++;
-	while (current != NULL && list != NULL)
+	new = new_stack();
+	current = NULL;
+	new->nb = newnb;
+	new->next = NULL;
+	if (lst == NULL)
 	{
-		if (list->index == current->index)
-			return (i);
-		current = current->next;
-		i++;
+		lst = new;
 	}
-	return (i);
+	else
+	{
+		current = lst;
+		while (current->next != NULL)
+			current = current->next;
+		current->next = new;
+	}
 }

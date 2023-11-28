@@ -6,36 +6,38 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 01:05:22 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/10/18 21:31:44 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/27 13:10:25 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	min_max(long mx)
+int	while_space(char *str)
 {
-	if (mx >= 2147483648 || mx <= -2147483648)
-	{
-		ft_putstr("Error : Integer Limits");
-		return (-1);
-	}
-	return (1);
+	int	i;
+
+	i = 0;
+	while (((str[i] >= 9 && str[i] <= 13) || str[i] == 32))
+		i++;
+	return (i);
 }
 
-long int ft_atoi(char *str)
+long int	ft_atoi(const char *str)
 {
-	int i;
-	int	n;
-	long int res;
+	int			i;
+	int			n;
+	long int	res;
 
 	i = 0;
 	n = 1;
 	res = 0;
-	while (str[i] && str[i] == ' ')
-		i++;
-	if (str[i] == '-')
+	if (str == NULL)
+		return (0);
+	i = while_space((char *)str);
+	if (str[i] == '-' || str[i] == '+')
 	{
-		n = -1;
+		if (str[i] == '-')
+			n = -1;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
@@ -43,10 +45,6 @@ long int ft_atoi(char *str)
 		res = res * 10 + (str[i] - '0');
 		i++;
 	}
-	res *=n;
-	if (min_max(res) == -1)
-	{
-		return (2147483647);
-	}
+	res *= n;
 	return (res);
 }

@@ -6,20 +6,21 @@
 /*   By: mnshimiy <mnshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 15:18:58 by mnshimiy          #+#    #+#             */
-/*   Updated: 2023/08/22 13:25:06 by mnshimiy         ###   ########.fr       */
+/*   Updated: 2023/11/12 10:11:32 by mnshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int is_alpha(char *str)
+int	is_alpha(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
 	{
-		if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z'))
+		if ((str[i] >= 'a' && str[i] <= 'z')
+			|| (str[i] >= 'A' && str[i] <= 'Z'))
 		{
 			return (0);
 		}
